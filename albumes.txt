@@ -1,7 +1,13 @@
-2026|1|CumpleañosMario|https://photos.app.goo.gl/4NZ8Ja8KXhZ9vcZy5
-2024|2|Cumpleaños Camilo|https://photos.app.goo.gl/SzrBE9mg1Q6nidkJ8
-2026|1|parque bicentenario de Vitacura|https://photos.app.goo.gl/z5gWMFbZWpCvNBex8
-2021|1|Plaza Maipú Domingo|https://photos.app.goo.gl/QM7Ku48nasWsVsfWA
-2025|1|Valparaíso, Viña,Sta.Ines|https://photos.app.goo.gl/cdFyJeDcu6oV8R5S8
- 
+2026 | 1 | Cumpleaños de Mario | https://photos.app.goo.gl/ejemplo1
+2025 | 1 | Paseo a Valparaíso y Viña | https://photos.app.goo.gl/ejemplo2
+0000 | 2 | Recuerdos Varios | https://photos.app.goo.gl/ejemplo3
+2026 | 1 | Cumpleaños de Mario | https://photos.app.goo.gl/ejemplo1
+2025 | 1 | Paseo a Valparaíso y Viña | https://photos.app.goo.gl/ejemplo2
+0000 | 2 | Recuerdos Varios | https://photos.app.goo.gl/ejemplo3
+2026 | 1 | Cumpleaños de Mario | https://photos.app.goo.gl/ejemplo1
+2025 | 1 | Paseo a Valparaíso y Viña | https://photos.app.goo.gl/ejemplo2
+0000 | 2 | Recuerdos Varios | https://photos.app.goo.gl/ejemplo3
+
+
+
 
