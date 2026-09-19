@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Álbumes de Google Fotos</title>
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #202124;
+      --text-secondary: #5f6368;
+      --accent-color: #1a73e8;
+      --border-color: #e0e0e0;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.14);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 30px 16px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #1f1f1f;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Grilla de Tarjetas */
+    .grid-albumes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    /* Estilo de la Tarjeta */
+    .tarjeta-album {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tarjeta-album:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-color);
+    }
+
+    .tarjeta-album::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: var(--accent-color);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .tarjeta-album:hover::before {
+      opacity: 1;
+    }
+
+    .tarjeta-header {
+      margin-bottom: 16px;
+    }
+
+    .icono-album {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .titulo-album {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      word-break: break-word;
+    }
+
+    .cuenta-origen {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .tarjeta-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent-color);
+    }
+
+    .flecha {
+      transition: transform 0.2s ease;
+    }
+
+    .tarjeta-album:hover .flecha {
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🖼️ Mis Álbumes de Google Fotos</h1>
+      <p>Selecciona una tarjeta para abrir el álbum en una nueva pestaña</p>
+    </header>
+
+    <main class="grid-albumes">
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/4NZ8Ja8KXhZ9vcZy5')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🎂</span>
+          <h2 class="titulo-album">Cumpleaños Mario</h2>
+          <div class="cuenta-origen">Año: 2026</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/FCKTBxLuLMW9jbvYA')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🎉</span>
+          <h2 class="titulo-album">Inauguración Delicias Iris</h2>
+          <div class="cuenta-origen">Año: 2025</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/cdFyJeDcu6oV8R5S8')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🏙️</span>
+          <h2 class="titulo-album">Valparaíso, Viña, Sta. Ines</h2>
+          <div class="cuenta-origen">Año: 2025</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/SzrBE9mg1Q6nidkJ8')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🎂</span>
+          <h2 class="titulo-album">Cumpleaños Camilo</h2>
+          <div class="cuenta-origen">Año: 2024</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/z5gWMFbZWpCvNBex8')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🌳</span>
+          <h2 class="titulo-album">Parque Bicentenario de Vitacura</h2>
+          <div class="cuenta-origen">Año: 2024 (Enero)</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/izmw5xTpcgP7i1oF6')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🎆</span>
+          <h2 class="titulo-album">Año Nuevo</h2>
+          <div class="cuenta-origen">Año: 2023</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/4NqMBtYLqzXEkjtV8')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🇨🇱</span>
+          <h2 class="titulo-album">18 de Septiembre</h2>
+          <div class="cuenta-origen">Año: 2022</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/rJpbfRxQqLDzDkbj7')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🌵</span>
+          <h2 class="titulo-album">Copiapó día 4</h2>
+          <div class="cuenta-origen">Año: 2022</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/qZmS6VFLyrvYqb6WA')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🌵</span>
+          <h2 class="titulo-album">Copiapó día 8</h2>
+          <div class="cuenta-origen">Año: 2022</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/46NAs4uiXXh6Qqef6')">
+        <div class="tarjeta-header">
+          <span class="icono-album">💐</span>
+          <h2 class="titulo-album">Cumpleaños Tía Amandina</h2>
+          <div class="cuenta-origen">Año: 2022</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/qi2bn7TYhk9UibmJA')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🇨🇱</span>
+          <h2 class="titulo-album">18 de Septiembre</h2>
+          <div class="cuenta-origen">Año: 2021</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+      <article class="tarjeta-album" onclick="irAlAlbum('https://photos.app.goo.gl/QM7Ku48nasWsVsfWA')">
+        <div class="tarjeta-header">
+          <span class="icono-album">🏛️</span>
+          <h2 class="titulo-album">Plaza Maipú - Domingo</h2>
+          <div class="cuenta-origen">Año: 2021</div>
+        </div>
+        <div class="tarjeta-footer">
+          <span>Abrir álbum</span>
+          <span class="flecha">➔</span>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <script>
+    function irAlAlbum(url) {
+      if (url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      }
+    }
+  </script>
+
+</body>
+</html>
