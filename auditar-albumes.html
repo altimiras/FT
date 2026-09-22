@@ -3,69 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verificador de Álbumes</title>
+  <title>Analizador de Álbumes</title>
   <style>
-    body { font-family: sans-serif; padding: 15px; background: #f4f4f9; }
-    .album { margin: 8px 0; padding: 10px; border-radius: 6px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .ok { border-left: 6px solid #2e7d32; }
-    .error { border-left: 6px solid #c62828; background: #ffebee; }
-    a { text-decoration: none; color: #1565c0; font-weight: bold; }
-    button { padding: 10px 15px; background: #1565c0; color: white; border: none; border-radius: 4px; font-size: 16px; margin-bottom: 15px; }
+    body { font-family: system-ui, -apple-system, sans-serif; padding: 15px; background: #f8f9fa; color: #333; }
+    h2 { color: #1a73e8; margin-bottom: 5px; }
+    .box { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    button { background: #1a73e8; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 16px; font-weight: bold; width: 100%; cursor: pointer; }
+    button:active { background: #1557b0; }
+    
+    .item-error { background: #fce8e6; border-left: 5px solid #d93025; padding: 10px; margin: 8px 0; border-radius: 4px; }
+    .item-ok { background: #e6f4ea; border-left: 5px solid #188038; padding: 8px; margin: 5px 0; border-radius: 4px; display: none; }
+    
+    .title-error { color: #c5221f; font-weight: bold; font-size: 15px; }
+    .url-text { font-size: 12px; color: #5f6368; word-break: break-all; margin-top: 4px; }
+    
+    #resumen { font-size: 16px; font-weight: bold; margin-bottom: 15px; }
+    .badge-error { color: #d93025; }
+    .badge-ok { color: #188038; }
   </style>
 </head>
 <body>
 
-  <h2>Verificador de Álbumes de Google Photos</h2>
-  <button onclick="procesarTxt()">Analizar lista de álbumes</button>
-  
+  <div class="box">
+    <h2>Detector de Álbumes Privados</h2>
+    <p style="font-size:13px; color:#666;">Analiza tu <code>albumes.txt</code> e identifica únicamente los que requieren iniciar sesión en Google.</p>
+    <button onclick="analizarLista()">Iniciar Análisis</button>
+  </div>
+
   <div id="resumen"></div>
-  <div id="resultado"></div>
+
+  <div class="box" id="bloque-errores" style="display:none;">
+    <h3 style="color:#d93025; margin-top:0;">⚠️ Álbumes que debes corregir:</h3>
+    <div id="lista-errores"></div>
+  </div>
+
+  <div id="lista-general"></div>
 
   <script>
-    async function procesarTxt() {
-      const contenedor = document.getElementById('resultado');
+    async function analizarLista() {
       const resumen = document.getElementById('resumen');
-      contenedor.innerHTML = "<p>Cargando y analizando enlaces...</p>";
+      const listaErrores = document.getElementById('lista-errores');
+      const bloqueErrores = document.getElementById('bloque-errores');
+      const listaGeneral = document.getElementById('lista-general');
       
+      resumen.innerHTML = "⌛ Cargando y analizando álbumes...";
+      listaErrores.innerHTML = "";
+      listaGeneral.innerHTML = "";
+      bloqueErrores.style.display = "none";
+
       try {
-        // Lee el archivo .txt de tu servidor o carpeta local
-        const respuesta = await fetch('albumes.txt');
-        const texto = await respuesta.text();
+        const resp = await fetch('albumes.txt?' + new Date().getTime());
+        const texto = await resp.text();
         const lineas = texto.split('\n');
-        
-        contenedor.innerHTML = "";
-        let totalErrores = 0;
-        let totalOk = 0;
+
+        let errores = 0;
+        let correctos = 0;
 
         for (let i = 0; i < lineas.length; i++) {
-          const partes = lineas[i].split('|');
+          const linea = lineas[i].trim();
+          if (!linea) continue;
+
+          const partes = linea.split('|');
           if (partes.length >= 4) {
             const fecha = partes[0].trim();
             const nombre = partes[2].trim();
             const url = partes[3].trim();
 
-            const div = document.createElement('div');
-            div.className = 'album';
+            // Detecta URLs privadas por patrón de copia de navegador (/u/0/, /u/1/ o photos.google.com/album/)
+            const esEnlacePrivado = url.includes('/u/0/') || 
+                                    url.includes('/u/1/') || 
+                                    url.includes('/u/2/') || 
+                                    (url.includes('photos.google.com/album/') && !url.includes('share'));
 
-            try {
-              // Intenta hacer una petición rápida sin credenciales/cookies
-              const res = await fetch(url, { mode: 'no-cors' });
-              div.classList.add('ok');
-              div.innerHTML = `<strong>✅ [OK]</strong> ${nombre} <br><a href="${url}" target="_blank">Abrir enlace</a>`;
-              totalOk++;
-            } catch (err) {
-              div.classList.add('error');
-              div.innerHTML = `<strong>❌ [REVISAR PERMISOS]</strong> ${nombre} <br><small>${url}</small>`;
-              totalErrores++;
+            if (esEnlacePrivado) {
+              errores++;
+              
+              const divErr = document.createElement('div');
+              divErr.className = 'item-error';
+              divErr.innerHTML = `
+                <div class="title-error">❌ ${fecha} - ${nombre}</div>
+                <div class="url-text">Link actual: <code>${url}</code></div>
+                <a href="${url}" target="_blank" style="font-size:12px; color:#1a73e8;">Probar enlace en pestaña nueva</a>
+              `;
+              listaErrores.appendChild(divErr);
+            } else {
+              correctos++;
             }
-            contenedor.appendChild(div);
           }
         }
 
-        resumen.innerHTML = `<p><strong>Análisis finalizado:</strong> ${totalOk} accesibles | <strong style="color:red">${totalErrores} con problemas de acceso</strong>.</p>`;
+        bloqueErrores.style.display = errores > 0 ? "block" : "none";
+        
+        resumen.innerHTML = `
+          Resultados:<br>
+          <span class="badge-error">❌ ${errores} álbumes requieren corregir el enlace privado.</span><br>
+          <span class="badge-ok">✅ ${correctos} álbumes están configurados correctamente.</span>
+        `;
 
-      } catch (e) {
-        contenedor.innerHTML = "<p style='color:red'>Error: No se pudo cargar el archivo albumes.txt. Asegúrate de que esté en la misma carpeta que este HTML.</p>";
+        if (errores === 0) {
+          resumen.innerHTML += "<br><br>🎉 ¡Todos los enlaces de tu archivo están correctamente formateados como públicos!";
+        }
+
+      } catch (err) {
+        resumen.innerHTML = "<span style='color:red;'>Error al cargar albumes.txt. Verifica que el archivo esté en la misma carpeta.</span>";
       }
     }
   </script>
