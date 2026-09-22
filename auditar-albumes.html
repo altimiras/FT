@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Álbumes</title>
+  <style>
+    body { font-family: sans-serif; padding: 15px; background: #f4f4f9; }
+    .album { margin: 8px 0; padding: 10px; border-radius: 6px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .ok { border-left: 6px solid #2e7d32; }
+    .error { border-left: 6px solid #c62828; background: #ffebee; }
+    a { text-decoration: none; color: #1565c0; font-weight: bold; }
+    button { padding: 10px 15px; background: #1565c0; color: white; border: none; border-radius: 4px; font-size: 16px; margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+
+  <h2>Verificador de Álbumes de Google Photos</h2>
+  <button onclick="procesarTxt()">Analizar lista de álbumes</button>
+  
+  <div id="resumen"></div>
+  <div id="resultado"></div>
+
+  <script>
+    async function procesarTxt() {
+      const contenedor = document.getElementById('resultado');
+      const resumen = document.getElementById('resumen');
+      contenedor.innerHTML = "<p>Cargando y analizando enlaces...</p>";
+      
+      try {
+        // Lee el archivo .txt de tu servidor o carpeta local
+        const respuesta = await fetch('albumes.txt');
+        const texto = await respuesta.text();
+        const lineas = texto.split('\n');
+        
+        contenedor.innerHTML = "";
+        let totalErrores = 0;
+        let totalOk = 0;
+
+        for (let i = 0; i < lineas.length; i++) {
+          const partes = lineas[i].split('|');
+          if (partes.length >= 4) {
+            const fecha = partes[0].trim();
+            const nombre = partes[2].trim();
+            const url = partes[3].trim();
+
+            const div = document.createElement('div');
+            div.className = 'album';
+
+            try {
+              // Intenta hacer una petición rápida sin credenciales/cookies
+              const res = await fetch(url, { mode: 'no-cors' });
+              div.classList.add('ok');
+              div.innerHTML = `<strong>✅ [OK]</strong> ${nombre} <br><a href="${url}" target="_blank">Abrir enlace</a>`;
+              totalOk++;
+            } catch (err) {
+              div.classList.add('error');
+              div.innerHTML = `<strong>❌ [REVISAR PERMISOS]</strong> ${nombre} <br><small>${url}</small>`;
+              totalErrores++;
+            }
+            contenedor.appendChild(div);
+          }
+        }
+
+        resumen.innerHTML = `<p><strong>Análisis finalizado:</strong> ${totalOk} accesibles | <strong style="color:red">${totalErrores} con problemas de acceso</strong>.</p>`;
+
+      } catch (e) {
+        contenedor.innerHTML = "<p style='color:red'>Error: No se pudo cargar el archivo albumes.txt. Asegúrate de que esté en la misma carpeta que este HTML.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
