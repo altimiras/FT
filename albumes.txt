@@ -264,3 +264,4 @@ Sin Año|1|Museo Historico Militar|https://photos.app.goo.gl/HNRAkGQXMVjUE4vt6
 Sin Año|1|Sin nombre|https://photos.app.goo.gl/A8R56Shs2KVxuq166
 Sin Año|1|Veronica Altimiras - recuerdos|https://photos.app.goo.gl/qiQh4kkiLLoBbhG48
 Sin Año|1|Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
+Sin año|1|FAMILIA CORDOVA|https://Altimiras.github.io/FT/familia-cordova.html
