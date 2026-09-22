@@ -3,60 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analizador de Álbumes</title>
+  <title>Analizador Completo de Álbumes</title>
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; padding: 15px; background: #f8f9fa; color: #333; }
+    body { font-family: system-ui, -apple-system, sans-serif; padding: 15px; background: #f8f9fa; color: #333; max-width: 800px; margin: 0 auto; }
     h2 { color: #1a73e8; margin-bottom: 5px; }
     .box { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    button { background: #1a73e8; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 16px; font-weight: bold; width: 100%; cursor: pointer; }
+    button { background: #1a73e8; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-size: 15px; font-weight: bold; width: 100%; cursor: pointer; margin-bottom: 10px; }
     button:active { background: #1557b0; }
+    .btn-secundario { background: #5f6368; }
     
-    .item-error { background: #fce8e6; border-left: 5px solid #d93025; padding: 10px; margin: 8px 0; border-radius: 4px; }
-    .item-ok { background: #e6f4ea; border-left: 5px solid #188038; padding: 8px; margin: 5px 0; border-radius: 4px; display: none; }
-    
+    .item-error { background: #fce8e6; border-left: 5px solid #d93025; padding: 12px; margin: 10px 0; border-radius: 4px; }
     .title-error { color: #c5221f; font-weight: bold; font-size: 15px; }
-    .url-text { font-size: 12px; color: #5f6368; word-break: break-all; margin-top: 4px; }
+    .url-text { font-size: 12px; color: #5f6368; word-break: break-all; margin: 6px 0; }
     
-    #resumen { font-size: 16px; font-weight: bold; margin-bottom: 15px; }
+    #resumen { font-size: 16px; font-weight: bold; margin-bottom: 15px; line-height: 1.5; }
     .badge-error { color: #d93025; }
     .badge-ok { color: #188038; }
+    .badge-warn { color: #e37400; }
+    
+    .acciones { display: flex; gap: 10px; margin-top: 8px; }
+    .acciones a { text-decoration: none; font-size: 13px; color: #1a73e8; font-weight: bold; background: white; padding: 5px 10px; border-radius: 4px; border: 1px solid #dadce0; }
   </style>
 </head>
 <body>
 
   <div class="box">
-    <h2>Detector de Álbumes Privados</h2>
-    <p style="font-size:13px; color:#666;">Analiza tu <code>albumes.txt</code> e identifica únicamente los que requieren iniciar sesión en Google.</p>
-    <button onclick="analizarLista()">Iniciar Análisis</button>
+    <h2>Auditor de Álbumes de Google Photos</h2>
+    <p style="font-size:13px; color:#666;">Analiza <code>albumes.txt</code> e identifica enlaces de cuenta privada, formatos incorrectos o links sospechosos.</p>
+    <button onclick="analizarLista()">🔍 Iniciar Análisis Completo</button>
   </div>
 
   <div id="resumen"></div>
 
   <div class="box" id="bloque-errores" style="display:none;">
-    <h3 style="color:#d93025; margin-top:0;">⚠️ Álbumes que debes corregir:</h3>
+    <h3 style="color:#d93025; margin-top:0;">⚠️ Enlaces que debes revisar o corregir:</h3>
     <div id="lista-errores"></div>
   </div>
-
-  <div id="lista-general"></div>
 
   <script>
     async function analizarLista() {
       const resumen = document.getElementById('resumen');
       const listaErrores = document.getElementById('lista-errores');
       const bloqueErrores = document.getElementById('bloque-errores');
-      const listaGeneral = document.getElementById('lista-general');
       
-      resumen.innerHTML = "⌛ Cargando y analizando álbumes...";
+      resumen.innerHTML = "⌛ Leyendo albumes.txt...";
       listaErrores.innerHTML = "";
-      listaGeneral.innerHTML = "";
       bloqueErrores.style.display = "none";
 
       try {
         const resp = await fetch('albumes.txt?' + new Date().getTime());
+        if (!resp.ok) throw new Error("No se pudo cargar el archivo albumes.txt");
+        
         const texto = await resp.text();
         const lineas = texto.split('\n');
 
         let errores = 0;
+        let sospechosos = 0;
         let correctos = 0;
 
         for (let i = 0; i < lineas.length; i++) {
@@ -65,25 +67,37 @@
 
           const partes = linea.split('|');
           if (partes.length >= 4) {
-            const fecha = partes[0].trim();
+            const anio = partes[0].trim();
+            const cuenta = partes[1].trim();
             const nombre = partes[2].trim();
             const url = partes[3].trim();
 
-            // Detecta URLs privadas por patrón de copia de navegador (/u/0/, /u/1/ o photos.google.com/album/)
-            const esEnlacePrivado = url.includes('/u/0/') || 
+            // Detección 1: Enlaces directos a sesión de cuenta privada
+            const esPrivadoSesion = url.includes('/u/0/') || 
                                     url.includes('/u/1/') || 
                                     url.includes('/u/2/') || 
-                                    (url.includes('photos.google.com/album/') && !url.includes('share'));
+                                    url.includes('photos.google.com/album/');
 
-            if (esEnlacePrivado) {
+            // Detección 2: Enlaces no válidos de Google Photos o incompletos
+            const esEstructuraRara = !url.startsWith('https://photos.app.goo.gl/') && 
+                                     !url.startsWith('https://photos.google.com/share/');
+
+            if (esPrivadoSesion || esEstructuraRara) {
               errores++;
               
+              let motivo = esPrivadoSesion 
+                ? "URL vinculada a cuenta personal (/u/0/ o privada)" 
+                : "Formato de URL no estándar (no es enlace público photos.app.goo.gl)";
+
               const divErr = document.createElement('div');
               divErr.className = 'item-error';
               divErr.innerHTML = `
-                <div class="title-error">❌ ${fecha} - ${nombre}</div>
-                <div class="url-text">Link actual: <code>${url}</code></div>
-                <a href="${url}" target="_blank" style="font-size:12px; color:#1a73e8;">Probar enlace en pestaña nueva</a>
+                <div class="title-error">❌ [${anio}] Cuenta ${cuenta}: ${nombre}</div>
+                <div style="font-size:12px; color:#c5221f; font-weight:bold; margin-top:3px;">Motivo: ${motivo}</div>
+                <div class="url-text">Link registrado: <code>${url}</code></div>
+                <div class="acciones">
+                  <a href="${url}" target="_blank">🔗 Probar abrir enlace</a>
+                </div>
               `;
               listaErrores.appendChild(divErr);
             } else {
@@ -95,17 +109,17 @@
         bloqueErrores.style.display = errores > 0 ? "block" : "none";
         
         resumen.innerHTML = `
-          Resultados:<br>
-          <span class="badge-error">❌ ${errores} álbumes requieren corregir el enlace privado.</span><br>
-          <span class="badge-ok">✅ ${correctos} álbumes están configurados correctamente.</span>
+          <strong>Resultado del análisis:</strong><br>
+          <span class="badge-error">❌ ${errores} álbumes requieren corrección urgente.</span><br>
+          <span class="badge-ok">✅ ${correctos} álbumes tienen formato de enlace compartido.</span>
         `;
 
         if (errores === 0) {
-          resumen.innerHTML += "<br><br>🎉 ¡Todos los enlaces de tu archivo están correctamente formateados como públicos!";
+          resumen.innerHTML += "<br><br>🎉 ¡Todos los enlaces de tu archivo están en formato público!";
         }
 
       } catch (err) {
-        resumen.innerHTML = "<span style='color:red;'>Error al cargar albumes.txt. Verifica que el archivo esté en la misma carpeta.</span>";
+        resumen.innerHTML = `<span style='color:red;'>⚠️ Error: ${err.message}. Asegúrate de tener el archivo <b>albumes.txt</b> en la misma carpeta que esta herramienta.</span>`;
       }
     }
   </script>
