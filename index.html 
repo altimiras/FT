@@ -67,7 +67,7 @@
     }
 
     .search-input { flex: 1 1 100%; }
-    .filter-select { flex: 1 1 calc(50% - 6px); }
+    .filter-select { flex: 1 1 100%; }
 
     .counter {
       width: 100%;
@@ -223,12 +223,6 @@
         <option value="">Todos los años</option>
       </select>
 
-      <select id="groupSelect" class="filter-select">
-        <option value="">Todos los grupos</option>
-        <option value="1">Grupo 1</option>
-        <option value="2">Grupo 2</option>
-      </select>
-
       <div class="counter" id="counter">Cargando albumes.txt...</div>
     </div>
 
@@ -240,7 +234,6 @@
     const PAGE_SIZE = 8;
     const pageState = {};
 
-    // Función auxiliar para normalizar texto (quita acentos, convierte a minúsculas)
     function normalizeText(text) {
       return text
         .toLowerCase()
@@ -248,7 +241,6 @@
         .replace(/[\u0300-\u036f]/g, "");
     }
 
-    // Carga de datos tolerante a Android
     async function loadData() {
       try {
         const res = await fetch('albumes.txt');
@@ -267,7 +259,7 @@
               link: parts[3] || '#'
             };
           })
-          .filter(item => item.grupo === '1') // Solo toma los registros con código / grupo "1"
+          .filter(item => item.grupo === '1') // Solo lee los registros con código/grupo "1"
           .filter(item => item.link.startsWith('http'));
 
         populateYearSelect();
@@ -290,18 +282,14 @@
     }
 
     function render() {
-      // Normalizar la búsqueda del usuario (sin acentos ni mayúsculas)
       const search = normalizeText(document.getElementById('searchInput').value);
       const selectedYear = document.getElementById('yearSelect').value;
-      const selectedGroup = document.getElementById('groupSelect').value;
 
       const filtered = rawData.filter(item => {
-        // Normalizar el título antes de comparar
         const titleNormalized = normalizeText(item.titulo);
         const matchesSearch = titleNormalized.includes(search);
         const matchesYear = !selectedYear || item.anio === selectedYear;
-        const matchesGroup = !selectedGroup || item.grupo === selectedGroup;
-        return matchesSearch && matchesYear && matchesGroup;
+        return matchesSearch && matchesYear;
       });
 
       document.getElementById('counter').innerText = `Mostrando ${filtered.length} de ${rawData.length} álbumes`;
@@ -380,7 +368,6 @@
 
     document.getElementById('searchInput').addEventListener('input', render);
     document.getElementById('yearSelect').addEventListener('change', render);
-    document.getElementById('groupSelect').addEventListener('change', render);
 
     loadData();
   </script>
