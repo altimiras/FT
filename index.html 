@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Fototeca - v1.0.6</title>
+  <style>
+    body { font-family: sans-serif; background: #0f172a; color: #f8fafc; padding: 15px; margin: 0; }
+    .container { max-width: 800px; margin: 0 auto; }
+    .header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px; }
+    .v-tag { background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+    input, select { width: 100%; padding: 10px; margin-bottom: 10px; background: #1e293b; color: white; border: 1px solid #334155; border-radius: 6px; box-sizing: border-box; }
+    .card { background: #1e293b; border: 1px solid #334155; padding: 12px; margin-bottom: 8px; border-radius: 6px; display: block; color: white; text-decoration: none; }
+    .card:hover { background: #334155; }
+    .card-title { font-size: 1rem; font-weight: bold; }
+    .card-meta { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; }
+    .empty { padding: 20px; text-align: center; color: #94a3b8; background: #1e293b; border-radius: 6px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <span style="font-weight:bold;">📷 Mi Fototeca</span>
+      <span class="v-tag">v1.0.6</span>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="🔍 Buscar por título...">
+    <select id="yearSelect"><option value="">Todos los años</option></select>
+    <div id="counter" style="margin-bottom: 10px; font-size: 0.85rem; color: #94a3b8;">Cargando...</div>
+
+    <div id="gallery"></div>
+  </div>
+
+  <script>
+    let rawData = [];
+
+    async function loadData() {
+      const counterEl = document.getElementById('counter');
+      try {
+        const timestamp = new Date().getTime();
+        const res = await fetch(`albumes.txt?v=${timestamp}`, { cache: "no-store" });
+        if (!res.ok) throw new Error("No se pudo cargar albumes.txt");
+
+        const text = await res.text();
+
+        rawData = text
+          .split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0 && !line.startsWith('#'))
+          .map(line => {
+            const parts = line.split('|').map(p => p.trim());
+            return {
+              anio: parts[0] || '0000',
+              grupo: parts[1] || '1',
+              titulo: parts[2] || 'Sin título',
+              link: parts[3] || '#'
+            };
+          })
+          .filter(item => item.grupo.toString().trim() === '1')
+          .filter(item => item.link.toLowerCase().startsWith('http'));
+
+        populateYears();
+        render();
+      } catch (err) {
+        counterEl.innerText = "Error al cargar los datos.";
+        document.getElementById('gallery').innerHTML = `<div class="empty">${err.message}</div>`;
+      }
+    }
+
+    function populateYears() {
+      const yearSelect = document.getElementById('yearSelect');
+      const years = [...new Set(rawData.map(d => d.anio))].sort((a, b) => b.localeCompare(a));
+      years.forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y === '0000' ? 'Sin Año' : `Año ${y}`;
+        yearSelect.appendChild(opt);
+      });
+    }
+
+    function render() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const year = document.getElementById('yearSelect').value;
+
+      const filtered = rawData.filter(item => {
+        const matchesSearch = item.titulo.toLowerCase().includes(search);
+        const matchesYear = !year || item.anio === year;
+        return matchesSearch && matchesYear;
+      });
+
+      document.getElementById('counter').innerText = `Mostrando ${filtered.length} de ${rawData.length} álbumes`;
+
+      const gallery = document.getElementById('gallery');
+      if (filtered.length === 0) {
+        gallery.innerHTML = '<div class="empty">No se encontraron álbumes.</div>';
+        return;
+      }
+
+      gallery.innerHTML = filtered.map(item => `
+        <a class="card" href="${item.link}" target="_blank" rel="noopener">
+          <div class="card-title">${item.titulo}</div>
+          <div class="card-meta">Año: ${item.anio} | Código: ${item.grupo}</div>
+        </a>
+      `).join('');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', render);
+    document.getElementById('yearSelect').addEventListener('change', render);
+
+    loadData();
+  </script>
+</body>
+</html>
