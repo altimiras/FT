@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor y Fusionador de Álbumes TXT</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .upload-zone {
+            border: 2px dashed var(--border);
+            padding: 32px;
+            text-align: center;
+            border-radius: 8px;
+            background: #fafafa;
+            margin-bottom: 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .upload-zone:hover {
+            background: #f1f5f9;
+        }
+
+        .upload-zone input {
+            display: none;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: #eff6ff;
+            border-radius: 6px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn:disabled {
+            background-color: var(--border);
+            cursor: not-allowed;
+        }
+
+        .btn-danger {
+            background-color: transparent;
+            color: var(--danger);
+            padding: 4px 8px;
+        }
+
+        .btn-danger:hover {
+            background-color: #fee2e2;
+        }
+
+        .table-container {
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #f1f5f9;
+            position: sticky;
+            top: 0;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+        }
+
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"]:focus {
+            outline: 2px solid var(--primary);
+            border-color: transparent;
+        }
+
+        .actions-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Fusionador y Editor de Archivos TXT</h1>
+
+    <!-- Zona de Carga -->
+    <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+        <p style="margin: 0; font-size: 1.1rem; color: var(--text-muted);">
+            <strong>Haz clic aquí</strong> para seleccionar los archivos <code>.txt</code>
+        </p>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">Formato esperado: Fecha|código|nombre|link</span>
+        <input type="file" id="fileInput" multiple accept=".txt" onchange="procesarArchivos(this.files)">
+    </div>
+
+    <!-- Barra de Estado -->
+    <div class="stats-bar" id="statsBar" style="display: none;">
+        <span id="statsText">Registros cargados: 0</span>
+        <button class="btn" onclick="agregarFilaVacia()">+ Agregar Registro</button>
+    </div>
+
+    <!-- Tabla editable -->
+    <div class="table-container" id="tableContainer" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Fecha</th>
+                    <th style="width: 15%;">Código</th>
+                    <th style="width: 30%;">Nombre</th>
+                    <th style="width: 35%;">Link</th>
+                    <th style="width: 5%;"></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Acciones -->
+    <div class="actions-right">
+        <button class="btn" id="btnDescargar" disabled onclick="descargarTXT()">Descargar albumes.txt</button>
+    </div>
+</div>
+
+<script>
+    let registros = [];
+
+    async function procesarArchivos(files) {
+        if (!files.length) return;
+
+        const mapaLinks = new Map();
+
+        // Conservar los registros que ya estaban en la tabla
+        registros.forEach(reg => {
+            if (reg.link) mapaLinks.set(reg.link, reg);
+        });
+
+        // Leer los nuevos archivos
+        for (const file of files) {
+            const texto = await file.text();
+            const lineas = texto.split(/\r?\n/);
+
+            lineas.forEach(linea => {
+                const lineaLimpia = linea.trim();
+                if (!lineaLimpia) return;
+
+                const partes = lineaLimpia.split('|');
+                if (partes.length >= 4) {
+                    const fecha = partes[0].trim();
+                    const codigo = partes[1].trim();
+                    const nombre = partes[2].trim();
+                    const link = partes.slice(3).join('|').trim(); // Por si el link contiene '|'
+
+                    if (link && !mapaLinks.has(link)) {
+                        mapaLinks.set(link, { fecha, codigo, nombre, link });
+                    }
+                }
+            });
+        }
+
+        registros = Array.from(mapaLinks.values());
+        renderizarTabla();
+        // Limpiar el input para permitir re-subir el mismo archivo si es necesario
+        document.getElementById('fileInput').value = '';
+    }
+
+    function renderizarTabla() {
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+
+        registros.forEach((reg, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><input type="text" value="${escaparHTML(reg.fecha)}" oninput="actualizarRegistro(${index}, 'fecha', this.value)"></td>
+                <td><input type="text" value="${escaparHTML(reg.codigo)}" oninput="actualizarRegistro(${index}, 'codigo', this.value)"></td>
+                <td><input type="text" value="${escaparHTML(reg.nombre)}" oninput="actualizarRegistro(${index}, 'nombre', this.value)"></td>
+                <td><input type="text" value="${escaparHTML(reg.link)}" oninput="actualizarRegistro(${index}, 'link', this.value)"></td>
+                <td><button class="btn btn-danger" onclick="eliminarFila(${index})" title="Eliminar">✕</button></td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Actualizar UI
+        const tieneRegistros = registros.length > 0;
+        document.getElementById('tableContainer').style.display = tieneRegistros ? 'block' : 'none';
+        document.getElementById('statsBar').style.display = tieneRegistros ? 'flex' : 'none';
+        document.getElementById('btnDescargar').disabled = !tieneRegistros;
+        document.getElementById('statsText').innerText = `Total registros únicos (por Link): ${registros.length}`;
+    }
+
+    function actualizarRegistro(index, campo, valor) {
+        registros[index][campo] = valor;
+    }
+
+    function eliminarFila(index) {
+        registros.splice(index, 1);
+        renderizarTabla();
+    }
+
+    function agregarFilaVacia() {
+        registros.unshift({ fecha: '', codigo: '', nombre: '', link: '' });
+        renderizarTabla();
+    }
+
+    function descargarTXT() {
+        if (!registros.length) return;
+
+        const contenido = registros
+            .map(r => `${r.fecha.trim()}|${r.codigo.trim()}|${r.nombre.trim()}|${r.link.trim()}`)
+            .join('\n');
+
+        const blob = new Blob([contenido], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'albumes.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function escaparHTML(texto) {
+        return texto
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+</script>
+
+</body>
+</html>
