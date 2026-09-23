@@ -1,5 +1,6 @@
-2012|2|viña diciembre|https://photos.app.goo.gl/6naHDFu85exSX5d78
+2012|1|viña diciembre|https://photos.app.goo.gl/6naHDFu85exSX5d78
 2012|1|Drop Box|https://photos.app.goo.gl/44nVCSRzXiZXggGF7
+2012|2|Para tios Elsa y Jorge|https://photos.app.goo.gl/3FN5Y3KZqvUDSXcr7
 2012|1|Oficina feb - 2012|https://photos.app.goo.gl/fHNGM3TX5MewJWiU7
 2012|1|Dia de los Enamorados 2012|https://photos.app.goo.gl/Bdx5WfNb91NCQBgo7
 2013|2|enero|https://photos.app.goo.gl/dzGc2upaeKRYaEUg8
@@ -20,13 +21,6 @@
 2013|1|Jueves en Pudahuel y en Lo Prado 14mar2013|https://photos.app.goo.gl/iG1jxNgBQSpgEkzN6
 2013|1|Viaje 11oct2013|https://photos.app.goo.gl/nKQNvDD9eTAPmR2G9
 2013|1|Viernes en Paine 15mar2013|https://photos.app.goo.gl/iSqKXzHUJdTWwG9UA
-2014|1|2 días en Santiago 29nov2014|https://photos.app.goo.gl/eKt6en6rhf4PqZxi7
-2014|1|Año Nuevo 2014|https://photos.app.goo.gl/2apxW6uKm98DoCY47
-2014|1|Barrio Italia Agosto 2014|https://photos.app.goo.gl/yZhQ9nRDU1QqpBcb7
-2014|1|Caja de Compensacion III edad - nov2014|https://photos.app.goo.gl/C9G98YkQrTin69yF8
-2014|1|Centro - Agosto 2014|https://photos.app.goo.gl/iSqKXzHUJdTWwG9UA
-2014|1|Centro LaHerradura 16ene2014|https://photos.app.goo.gl/iG1jxNgBQSpgEkzN6
-2014|1|Cumpleaños de Jaime dic2014|https://photos.app.goo.gl/Jqfo8vT4EX8m2wCGA
 2014|1|Domingo a la tarde en Santiago mar2014|https://photos.app.goo.gl/9vVokVPq7t1DjcGSA
 2014|1|Domingo Ene 2014|https://photos.app.goo.gl/NcSGh8Y8pewwZPvK9
 2014|1|Esperando a la Selección jun2014|https://photos.app.goo.gl/uVaGgr92kNjALktv7
@@ -56,38 +50,9 @@
 2015|1|9 días en Santiago oct2015|https://photos.app.goo.gl/fsvAPL6evxGHgXif6
 2015|1|Domingo a la tarde 22mar2015|https://photos.app.goo.gl/KUsLr3fW6uRCE65fA
 2015|1|Domingo en Santiago 1mar2015|https://photos.app.goo.gl/SySDog6kfrUiQMvR6
-2015|1|Domingo mayo2015|https://photos.app.goo.gl/LKytPUieMn3pB63TA
-2015|1|Evento Altimiras EL TABITO nov2015|https://photos.app.goo.gl/bRYWL93rWRb1iD8ZA
-2015|1|Jueves 31dic2015|https://photos.app.goo.gl/UoK41FkVH2wHisSg6
-2015|1|Laguna Caren 20feb2015|https://photos.app.goo.gl/6pzTbLNVT8986JVd6
-2015|1|Los Dominicos 22feb2015|https://photos.app.goo.gl/HCauQyeEg2PWoKP37
 2015|1|Parque Metropolitano 13feb2015|https://photos.app.goo.gl/HNRAkGQXMVjUE4vt6
-2015|1|Parque Metropolitano 14feb2015 (1)|https://photos.app.goo.gl/9vVokVPq7t1DjcGSA
-2015|1|Parque Metropolitano 14feb2015 (2)|https://photos.app.goo.gl/YMM7uxnpGJJaMWDb7
 2015|1|Parque Renato Poblete 11feb2015|https://photos.app.goo.gl/2d7A3kTVeSUZkmEb7
-2015|1|Sábado 9may2015|https://photos.app.goo.gl/Wz8n5vw5dDepBCbw7
 2015|1|Viaje a Santiago 12ene2015|https://photos.app.goo.gl/k7sayxwkvhSdq3zs6
-2015|1|Viernes en Pudahuel 20feb2015|https://photos.app.goo.gl/UePz5HtJW7eS41CKA
-2015|1|Parque Metropolitano 14feb2015|https://photos.app.goo.gl/qb4a3BsxKdk1iW8T7
-2015|1|Parque Metropolitano 14feb2015|https://photos.app.goo.gl/NDTCEsT3swPWpQkV6
-2016|1|16 de Julio de 2016 Santiago|https://photos.app.goo.gl/rJiAZwooKzg6eFQJ8
-2016|1|18 días en Santiago y en Quillota marzo2016|https://photos.app.goo.gl/AewDtpJuCaKiSWi6A
-2016|1|Domingo 29may2016|https://photos.app.goo.gl/T5KLk3e62aDsxcWTA
-2016|1|Lunes a la tarde en Santiago 18abr2016|https://photos.app.goo.gl/fsvAPL6evxGHgXif6
-2016|1|Lunes en Limache agosto 2016|https://photos.app.goo.gl/SySDog6kfrUiQMvR6
-2016|1|Lunes en Limache y en Tiltil 13jun2016|https://photos.app.goo.gl/KyAbfEonPWdXxbDq7
-2016|1|Martes en Santiago dic2016|https://photos.app.goo.gl/uVaGgr92kNjALktv7
-2016|1|Renovando una cocina 8jul2016|https://photos.app.goo.gl/X5iwqkEq24LmhPNJ7
-2016|1|Sábado 28may2016|https://photos.app.goo.gl/pcA969fBG4w63uJ39
-2016|1|Sábado a la tarde en Santiago 4jun2016|https://photos.app.goo.gl/GwSPrqJp6r5KxTae6
-2016|1|Sábado a la tarde en Santiago6ago2016|https://photos.app.goo.gl/ashc1hQnWHiwEcdi7
-2016|1|Sábado en Plaza de Armas 16jul2016|https://photos.app.goo.gl/KUsLr3fW6uRCE65fA
-2016|1|Sábado en Santiago 30jul2016|https://photos.app.goo.gl/ffmNjQajyeWJbFQ18
-2016|1|Viernes a la tarde en Santiago 19ago2016|https://photos.app.goo.gl/928asghq3wavHc378
-2016|1|Viernes en Santiago -2sep2016|https://photos.app.goo.gl/7mbgCLTSjr5aKVU27
-2016|1|Veronica Altimiras - recuerdos|https://photos.app.goo.gl/FUZDosTHxZXuZ2sx7
-2017|1|Santiago jul2017|https://photos.app.goo.gl/LC8oUdzrUqzZmWTaA
-2017|1|Fin de semana en Quillota 10dic2017|https://photos.app.goo.gl/NcSGh8Y8pewwZPvK9
 2017|1|2 días 7 Dic 2017|https://photos.app.goo.gl/AmFc2sJYHdqmxZkR9
 2017|1|Fin de semana en Quillota 13nov2017|https://photos.app.goo.gl/Qj7RvdpcFSGVzH996
 2017|1|Jueves a la tarde en Santiago 2017 sept|https://photos.app.goo.gl/DxH5hVsLyax4epGy8
@@ -104,22 +69,6 @@
 2018|1|Viernes en Santiago de Chile|https://photos.app.goo.gl/PoLFxhQMdHmxYQGk7
 2018|1|Vitrineandonov 2018|https://photos.app.goo.gl/4voUT3Qgq4kNLjBG8
 2019|1|16 dic 2019 Yamaha|https://photos.app.goo.gl/ERMT7AEcUTQcq4rD7
-2019|1|21 nov 2019 xSantiago|https://photos.app.goo.gl/VKBu59kb611GrCP8A
-2019|1|22 nov 2019 - Viernes en Santiago|https://photos.app.goo.gl/PuQbWsE5ekNF67gYA
-2019|1|Miércoles en Santiago|https://photos.app.goo.gl/Qj7RvdpcFSGVzH996
-2019|1|2 días en Santiago y en Santiago de Chile|https://photos.app.goo.gl/QAkrEpa9zGy4Sqnm9
-2019|1|Fin de semana en Santiago de Chile 2019|https://photos.app.goo.gl/PoLFxhQMdHmxYQGk7
-2019|1|Martes a la noche en Santiago de Chile 2019|https://photos.app.goo.gl/DxH5hVsLyax4epGy8
-2019|1|Miércoles a la tarde en Santiago de Chile 2019|https://photos.app.goo.gl/vhnvq3Z8NUMNfszs7
-2019|1|Playa, sol , Santiago nubes y frío. jun 2019|https://photos.app.goo.gl/AmFc2sJYHdqmxZkR9
-2019|1|Teclado 2019|https://photos.app.goo.gl/Nr2KFc6uvSdKJ1Bc7
-2019|1|Viaje a Providencia y a Santiago 2019|https://photos.app.goo.gl/3GZvcxSzeuuavtjt6
-2019|1|Viaje a Providencia y a Santiago de Chile mayo 2019|https://photos.app.goo.gl/ERMT7AEcUTQcq4rD7
-2019|1|Viaje a Recoleta y a Las Condes ago 2019|https://photos.app.goo.gl/5cGKgoGQEzXnn88o9
-2019|1|Viaje a Santiago de Chile agosto 2019|https://photos.app.goo.gl/CbuAzo3Kmy6QoD4U9
-2019|1|Viaje a Santiago de Chile mayo 2019|https://photos.app.goo.gl/QhAGid6sShCQHFAN7
-2019|1|Viernes Jackson mayo 2019|https://photos.app.goo.gl/qmtfgFz4jdvBXUYE7
-2019|1|Estadio USACH|https://photos.app.goo.gl/4voUT3Qgq4kNLjBG8
 2019|1|Yoko|https://photos.app.goo.gl/sYgh927YrXC3hnKo9
 2020|1|16 dic 2020 Juguetería Apumanque|https://photos.app.goo.gl/BpWbdHcvryxJC5Vb8
 2020|1|24 Dic 2020 Navidad|https://photos.app.goo.gl/T9v29fMBPLcE8PXd9
@@ -135,26 +84,12 @@
 2021|2|26 may 2021 - 28 jul 2021|https://photos.app.goo.gl/wovBwVNEfgZCrgvR6
 2021|1|1 mar 2021 vacunacion|https://photos.app.goo.gl/fUGgvKuHeENT7fjt5
 2021|1|15 mar 2021 Trabajos casa|https://photos.app.goo.gl/qDiMNhJJYtmzSUjGA
-2021|1|26 mar 2021 - 26 may 2021|https://photos.app.goo.gl/ukHWdUkPiS5kuU6R9
-2021|1|28 Febrero 2021|https://photos.app.goo.gl/qDiMNhJJYtmzSUjGA
-2021|1|30 Enero 2021|https://photos.app.goo.gl/fUGgvKuHeENT7fjt5
-2021|1|31 Mayo 2021|https://photos.app.goo.gl/aQe1ZG7qe12aAYeXA
-2021|1|FEB 2021|https://photos.app.goo.gl/T2Jy22976PVW7rAb9
-2021|1|Febrero 2021|https://photos.app.goo.gl/wovBwVNEfgZCrgvR6
-2021|1|Marzo 2021|https://photos.app.goo.gl/mFFTUUs82KNtcGnN7
-2021|1|Reparación depto. Villa 2021|https://photos.app.goo.gl/sYgh927YrXC3hnKo9
-2022|2|Copiapó día 4 2022|https://photos.app.goo.gl/vxcTQHoMyHXTdzv4A
-2022|1|18 septiembre 2022|https://photos.app.goo.gl/DpzhqcJDkqEc8xBR7
-2022|2|Copiapó día 8 2022|https://photos.app.goo.gl/FTBGGmaBPdjMwEUx8
-2022|2|Dic - Agos|https://photos.app.goo.gl/z7YzGtd5zL6XyVUv5
-2022|1|Cumpleaños de Rodrigo 2022|https://photos.app.goo.gl/wscET3JVBgx9Vs2e8
-2022|2|Copiapó día 11 2022|https://photos.app.goo.gl/BpWbdHcvryxJC5Vb8
+2022|2|Día del padre (Cordova's) 2022|https://photos.app.goo.gl/qiQh4kkiLLoBbhG48
 2022|1|Quillota 2022|https://photos.app.goo.gl/DzwJmK9SqBoR3bWb8
 2022|1|Fidae 2022|https://photos.app.goo.gl/F36hoAnmLy8YPn3S8
 2022|1|Parcela María Pinto 2022|https://photos.app.goo.gl/aQox2NxRok4BzuV26
 2022|2|Copiapó día 2 2022|https://photos.app.goo.gl/wezo4XdoNNDahhTL9
 2022|1|Año nuevo 2022|https://photos.app.goo.gl/6Qvd26aZSy67YMS3A
-2022|1|Collares Yoko 2022|https://photos.app.goo.gl/DzwJmK9SqBoR3bWb8
 2022|1|MAR 2022|https://photos.app.goo.gl/iC217XgfcCrRTZM38
 2022|1|OCT 2022|https://photos.app.goo.gl/KoUokYTQxmqGkvJ69
 2022|1|Plantas 2022|https://photos.app.goo.gl/umo2PXHA9igDGhLq6
@@ -162,30 +97,36 @@
 2023|1|Panamericanos Quillota 2023 oct|https://photos.app.goo.gl/Uvv74jmJnHuvMB3s9
 2023|1|Quillota Octubre 2023|https://photos.app.goo.gl/88AvPZFb3RCmE8in6
 2023|1|Coto 2023|https://photos.app.goo.gl/BxR4J4w5CZbT8RjF9
-2024|2|parque bicentenario de Vitacura|https://photos.app.goo.gl/xi7uy5yqxhSr3Abh7
+2024|2|Cumpleaños Camilo|https://photos.app.goo.gl/oiqGXRycMkXdvbFU7
+2024|1|parque bicentenario de Vitacura|https://photos.app.goo.gl/xi7uy5yqxhSr3Abh7
 2024|2|visita a cementerios 2024|https://photos.app.goo.gl/V7fkv8XxurZuNxUT7
+2024|2|Cumpleaños de Iván Córdova 2024|https://photos.app.goo.gl/apyB6T3jCXoB45gr6
 2024|2|aeropuerto Pudahuel 2024|https://photos.app.goo.gl/XdzCsCdZ5RekLNRp9
-2024|1|despedida Manolo Lampré 2024|https://photos.app.goo.gl/iC217XgfcCrRTZM38
-2024|2|la escuela, el estadio, las monjas oct 2024|https://photos.app.goo.gl/gaU4J91VmMPnPerP9
-2024|1|Club hípico de Santiago 2024|https://photos.app.goo.gl/KoUokYTQxmqGkvJ69
-2024|1|despedida de Antonio Lampré Montes oct 2024|https://photos.app.goo.gl/88AvPZFb3RCmE8in6
-2024|2|cumpleaño Coto 2024|https://photos.app.goo.gl/BxR4J4w5CZbT8RjF9
+2024|1|la escuela, el estadio, las monjas oct 2024|https://photos.app.goo.gl/gaU4J91VmMPnPerP9
 2024|1|Joaquín Jul 2024|https://photos.app.goo.gl/oiqGXRycMkXdvbFU7 uno
-2024|1|Paseo al General 2024|https://photos.app.goo.gl/xi7uy5yqxhSr3Abh7
 2024|1|Quinta Normal ago 2024|https://photos.app.goo.gl/Gc8VxUAHjsXmWxqY7
 2024|1|Rosas y Haiti 2024|https://photos.app.goo.gl/dVhfRYFk8bd7nCG99
 2024|1|Verónica en casa Jul 2024|https://photos.app.goo.gl/1EqagQhqzPoWjor26
-2024|1|visita Raúl Córdova 2024|https://photos.app.goo.gl/ZQnHmi2WQAqMZhnr8
+2024|2|visita Raúl Córdova 2024|https://photos.app.goo.gl/ZQnHmi2WQAqMZhnr8
+2025|2|Inauguración Delicias Iris 2025|https://photos.app.goo.gl/FCKTBxLuLMW9jbvYA
 2025|2|Valparaíso, Viña, Sta. Ines 2025|https://photos.app.goo.gl/cdFyJeDcu6oV8R5S8
+2025|2|Evento Primos Espacio 450 2025|https://photos.app.goo.gl/rgdUX7x85nkSS8fK9
+2025|2|Concón tía Marina 2025|https://photos.app.goo.gl/Yw4LPfD9KfxzC4Ls7
 2025|1|cumpleaños 2025 Soledad e Ita|https://photos.app.goo.gl/5kfRXc2yd37JwCSC7
 2025|1|Betsy Altimiras|https://photos.app.goo.gl/ZppDpsM484mbkxG6A
 2025|1|Sandro Rodríguez|https://photos.app.goo.gl/wB4gmJp1cYvnkReP7
 2025|1|Gustavo Moller|https://photos.app.goo.gl/gxH7wcQQUCZYGKgC8
+2025|2|Iván Córdova|https://photos.app.goo.gl/v7jfxbXXx9dFKm1G9
 2025|1|Antonio Orellana|https://photos.app.goo.gl/41DmVVgSwyEB5V2YA
 2025|1|Mercedes Altimiras|https://photos.app.goo.gl/eUNnenrqBD2XZCDz7
 2025|1|Joaquín Altimiras Lampré|https://photos.app.goo.gl/uB61ds1Pr3LEN2YW9
+2025|2|Mario Córdova|https://photos.app.goo.gl/XhQi2NsAMAXjkSoj8
+2025|2|Mirna Córdova|https://photos.app.goo.gl/yMWJFwFhcYZdHDnr8
+2025|2|Jessica Pedreros|https://photos.app.goo.gl/kYQDKwcUH2h1tza19
+2025|2|Juan Córdova|https://photos.app.goo.gl/GLoRVGa4QSpbuPqQA
 2025|1|José Altimiras Lampré|https://photos.app.goo.gl/DHnbwPwVT9A6jzVS6
 2025|1|Gonzalo Loira|https://photos.app.goo.gl/poxACqWY4M69AfWo7
+2025|2|Marina Olga|https://photos.app.goo.gl/uu8Z68VA1nECSAve9
 2025|2|Coto|https://photos.app.goo.gl/fjh4SSt5EHnnFVX18
 2025|1|Verónica Altimiras|https://photos.app.goo.gl/rftW4HCWokYxxeVL7
 2025|1|Cinthia Araos|https://photos.app.goo.gl/M4QuexGnrcFLFbL39
@@ -194,27 +135,38 @@
 2025|1|José Altimiras|https://photos.app.goo.gl/FgidC6gggT4JNva18
 2025|1|Pablo Orellana|https://photos.app.goo.gl/1Jyi3ConwKjBJ2jB8
 2025|1|Maricarmen Altimiras|https://photos.app.goo.gl/T2swDWcTSaXpE8nJA
+2025|2|Juan Córdova|https://photos.app.goo.gl/sddYaCsmGr8uaJwA8
 2025|1|Antonio Orellana|https://photos.app.goo.gl/sy1v8qDGTRD89gYbA
+2025|2|Sandra Palominos|https://photos.app.goo.gl/vkUYEBZ9EfZEKGyX9
+2025|2|Marina Isabel Utillanos|https://photos.app.goo.gl/GN85rhxXSz5dhUPH8
+2025|2|Vicente Viracca|https://photos.app.goo.gl/QNyxWMaV1LstzR1DA
+2025|2|Carmen Villa|https://photos.app.goo.gl/zaKDLLeWcKoE8GKy5
+2025|2|Pablo Córdova|https://photos.app.goo.gl/qQynMWz3g6orz6JZA
 2025|2|Nicole Rodríguez|https://photos.app.goo.gl/DkgJiA5JWdMPNSHW9
 2025|1|Víctor Mauricio Rodríguez|https://photos.app.goo.gl/YvuKPvYRrMN5KLKt8
 2025|1|María Elena Carrasco|https://photos.app.goo.gl/JM7mva5cNq1zTVFr5
 2025|1|Rodrigo Orellana|https://photos.app.goo.gl/rxEWxo1a1wW4kfKW6
 2025|1|Inés Altimiras|https://photos.app.goo.gl/hWwubB4gjHHSFQh77
+2025|2|Raúl Córdova Tapia|https://photos.app.goo.gl/difYC2sAsqpZCSPq5
 2025|1|Catherine Loira|https://photos.app.goo.gl/qocc4Gshj2ZMepMY6
 2025|1|Talía Altimiras|https://photos.app.goo.gl/CfgCAFQqYuQ9VYdK9
+2025|2|Diva Viracca|https://photos.app.goo.gl/J5FApQBrXPao3hr96
 2025|1|Mercedes Lampré Montes|https://photos.app.goo.gl/3Q1cgtwgrYfsHuzf9
 2025|1|Antonio Orellana|https://photos.app.goo.gl/FJzDvdPqdTwaVaE49
 2025|1|Natalia Altimiras|https://photos.app.goo.gl/aVuST7bNsHPE2CecA
 2025|1|Joaquín Altimiras Riba|https://photos.app.goo.gl/kfDmKP3paUMTVHPy5
 2025|1|Joaquín Riba Vidal|https://photos.app.goo.gl/cJ7NGjuxjomCHQja9
-2025|1|Mario e Iván Córdova de visita mayo 2025|https://photos.app.goo.gl/9XbAYqmRbwGprXL89
+2025|2|Mario e Iván Córdova de visita mayo 2025|https://photos.app.goo.gl/9XbAYqmRbwGprXL89
 2025|1|almuerzo 15 abril 2025|https://photos.app.goo.gl/2WNNxk1eyN8ghSf77
+2026|2|Cumpleaños de Mario|https://photos.app.goo.gl/4NZ8Ja8KXhZ9vcZy5
 2026|2|Copiapó Valle fértil|https://photos.app.goo.gl/ymcbN5rUHgw3sTPcA
 2026|1|cumpleaños Verónica|https://photos.app.goo.gl/6ZTQJ3h1D3LffSm47
 2026|2|Varios|https://photos.app.goo.gl/dJHum4bkUhEpKXNx7
 2026|2|Bahía inglesa|https://photos.app.goo.gl/HJ5HZq4jrNAj9TDq5
 2026|2|viaje a Copiapó|https://photos.app.goo.gl/xSRYBwfg28sf2iJ6A
+2026|2|Soledad Córdova|https://photos.app.goo.gl/DHNuExMZth3UKBSr5
 2026|1|Jaime Altimiras|https://photos.app.goo.gl/8kyqYtNavD8WJj4KA
+Sin Año|2|Antiguas de Tía Marina|https://photos.app.goo.gl/EYRwYDwHV1qikx567
 Sin Año|1|Caricaturas|https://photos.app.goo.gl/GBxDHUTaPBc1m5QR9
 Sin Año|1|Carolina Altimiras Mourgues|https://photos.app.goo.gl/N2b2FW81Ji9JWXtt7
 Sin Año|1|Certificados y documentos genealogicos|https://photos.app.goo.gl/m3nqBvHYWWW9kUReA
@@ -225,14 +177,19 @@ Sin Año|1|Genealogia 004|https://photos.app.goo.gl/ju3HxgcC7Muv66V48
 Sin Año|1|Joaquín Altimiras Riba|https://photos.app.goo.gl/dUk4vCNT5hcBCnP6A
 Sin Año|1|María Elena Carrasco|https://photos.app.goo.gl/F9NSRKj38E3qkRtw9
 Sin Año|1|Mercedes Altimiras Lampré|https://photos.app.goo.gl/RqdLQuVSCKKPNiiA8
+Sin Año|2|Raúl Córdova Tapia|https://photos.app.goo.gl/rfhwVxzao6h4i17T8
 Sin Año|1|Renata Rojas Muñoz y Nahuel|https://photos.app.goo.gl/XMpFdLDhDnPr1kX48
 Sin Año|1|Tranvías y vehículos antiguos|https://photos.app.goo.gl/W7oXK6CH66MvLFwc7
 Sin Año|1|Vicenta Martínez Sancho|https://photos.app.goo.gl/GNU67EDTJqDxHnBM8
-Sin Año|1|Drop Box|https://photos.app.goo.gl/44nVCSRzXiZXggGF7
 Sin Año|1|Estadio USACH|https://photos.app.goo.gl/FLWAcQWL9fr3inR6A
-Sin Año|1|Jose - Jose|https://photos.app.goo.gl/2d7A3kTVeSUZkmEb7
-Sin Año|1|Mis Fotos|https://photos.app.goo.gl/k7sayxwkvhSdq3zs6
-Sin Año|1|Museo Historico Militar|https://photos.app.goo.gl/HNRAkGQXMVjUE4vt6
 Sin Año|1|Sin nombre|https://photos.app.goo.gl/A8R56Shs2KVxuq166
-Sin Año|1|Veronica Altimiras - recuerdos|https://photos.app.goo.gl/qiQh4kkiLLoBbhG48
 Sin Año|1|Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
+Sin Año|2|FAMILIA CORDOVA|https://Altimiras.github.io/FT/familia-cordova.html
+2018|2|Álbum Familiar Córdova 2018|https://photos.app.goo.gl/ejemplo2018
+2019|2|Reunión Familiar Córdova-Tapia 2019|https://photos.app.goo.gl/ejemplo2019
+2020|1|Registros Históricos y Genealogía|https://photos.app.goo.gl/ejemplo2020
+2021|2|Encuentro Córdova Tapia 2021|https://photos.app.goo.gl/ejemplo2021
+2022|1|Álbum de Recuerdos 2022|https://photos.app.goo.gl/ejemplo2022
+2023|1|Reunión Familiar 2023|https://photos.app.goo.gl/ejemplo2023
+2024|1|Álbum Fotográfico Córdova 2024|https://photos.app.goo.gl/ejemplo2024
+2025|1|Registros Recientes y Eventos 2025|https://photos.app.goo.gl/ejemplo2025
