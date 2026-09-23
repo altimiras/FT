@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Fototeca</title>
+  <meta name="theme-color" content="#1a2e40">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-hover: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(30, 41, 59, 0.85);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      padding: 16px 12px;
+      min-height: 100vh;
+    }
+    
+    .container { max-width: 900px; margin: 0 auto; }
+
+    .controls {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-bar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .version-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .controls input, .controls select {
+      background: #0f172a;
+      color: var(--text);
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .controls input:focus, .controls select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    }
+
+    .search-input { flex: 1 1 100%; }
+    .filter-select { flex: 1 1 100%; }
+
+    .counter {
+      width: 100%;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .year-accordion {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.2s;
+    }
+
+    .year-header {
+      width: 100%;
+      padding: 16px 18px;
+      background: var(--card-bg);
+      border: none;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .year-header:hover {
+      background: var(--card-hover);
+    }
+
+    .year-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #a5b4fc;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .year-content {
+      display: none;
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.6);
+    }
+
+    .year-content.open { display: block; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      background: var(--card-hover);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      color: #f1f5f9;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .tag-group {
+      background: rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .card-action {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .load-more-btn {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px dashed var(--accent);
+      color: #a5b4fc;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .load-more-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .empty-msg {
+      text-align: center;
+      padding: 40px 20px;
+      color: #f87171;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="controls">
+      <div class="header-bar">
+        <span style="font-weight:700; font-size:1.1rem;">📷 Mi Fototeca</span>
+        <span class="version-tag">v1.0.4</span>
+      </div>
+
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por título...">
+      
+      <select id="yearSelect" class="filter-select">
+        <option value="">Todos los años</option>
+      </select>
+
+      <div class="counter" id="counter">Cargando albumes.txt...</div>
+    </div>
+
+    <div id="gallery"></div>
+  </div>
+
+  <script>
+    let rawData = [];
+    const PAGE_SIZE = 8;
+    const pageState = {};
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    async function loadData() {
+      const counterEl = document.getElementById('counter');
+      try {
+        const timestamp = new Date().getTime();
+        const res = await fetch(`albumes.txt?v=${timestamp}`, { cache: "no-store" });
+
+        if (!res.ok) {
+          throw new Error(`Error HTTP ${res.status}: No se encontró el archivo albumes.txt`);
+        }
+
+        const text = await res.text();
+
+        rawData = text
+          .split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0 && !line.startsWith('#'))
+          .map(line => {
+            const parts = line.split('|').map(item => item.trim());
+            return {
+              anio: parts[0] || '0000',
+              grupo: parts[1] || '1',
+              titulo: parts[2] || 'Sin título',
+              link: parts[3] || '#'
+            };
+          })
+          .filter(item => item.grupo === '1')
+          .filter(item => item.link.startsWith('http'));
+
+        if (rawData.length === 0) {
+          counterEl.innerText = 'El archivo albumes.txt no tiene registros válidos con código 1.';
+          document.getElementById('gallery').innerHTML = '<div class="empty-msg">No hay datos que coincidan con la condición (Código 1 y enlace válido HTTP/HTTPS).</div>';
+          return;
+        }
+
+        populateYearSelect();
+        render();
+      } catch (err) {
+        counterEl.innerText = 'Error al cargar los datos.';
+        document.getElementById('gallery').innerHTML = `<div class="empty-msg">⚠️ ${err.message}</div>`;
+      }
+    }
+
+    function populateYearSelect() {
+      const yearSelect = document.getElementById('yearSelect');
+      const years = [...new Set(rawData.map(d => d.anio))].sort((a, b) => b.localeCompare(a));
+      
+      years.forEach(year => {
+        const opt = document.createElement('option');
+        opt.value = year;
+        opt.textContent = year === '0000' ? 'Sin Año' : `Año ${year}`;
+        yearSelect.appendChild(opt);
+      });
+    }
+
+    function render() {
+      const search = normalizeText(document.getElementById('searchInput').value);
+      const selectedYear = document.getElementById('yearSelect').value;
+
+      const filtered = rawData.filter(item => {
+        const titleNormalized = normalizeText(item.titulo);
+        const matchesSearch = titleNormalized.includes(search);
+        const matchesYear = !selectedYear || item.anio === selectedYear;
+        return matchesSearch && matchesYear;
+      });
+
+      document.getElementById('counter').innerText = `Mostrando ${filtered.length} de ${rawData.length} álbumes (Código 1)`;
+
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+
+      if (filtered.length === 0) {
+        gallery.innerHTML = '<div class="empty-msg" style="color: var(--text-muted)">No se encontraron álbumes.</div>';
+        return;
+      }
+
+      const grouped = filtered.reduce((acc, item) => {
+        acc[item.anio] = acc[item.anio] || [];
+        acc[item.anio].push(item);
+        return acc;
+      }, {});
+
+      const sortedYears = Object.keys(grouped).sort((a, b) => b.localeCompare(a));
+
+      sortedYears.forEach((year, index) => {
+        const accordion = document.createElement('div');
+        accordion.className = 'year-accordion';
+
+        const forceOpen = search.length > 0 || selectedYear !== "";
+        const isOpen = forceOpen || (index === 0 && !pageState.hasOwnProperty(year)) || pageState[year]?.open;
+
+        const limit = pageState[year]?.limit || PAGE_SIZE;
+        const totalInYear = grouped[year].length;
+        const visibleItems = grouped[year].slice(0, limit);
+
+        const yearLabel = year === '0000' ? 'Sin Año / Varios' : `Año ${year}`;
+
+        accordion.innerHTML = `
+          <button class="year-header" onclick="toggleYear('${year}')">
+            <span>📅 ${yearLabel}</span>
+            <span class="year-badge">${totalInYear} álbumes</span>
+          </button>
+
+          <div class="year-content ${isOpen ? 'open' : ''}">
+            <div class="grid">
+              ${visibleItems.map(item => `
+                <a class="card" href="${item.link}" target="_blank" rel="noopener">
+                  <div class="card-title">${item.titulo}</div>
+                  <div class="card-meta">
+                    <span class="tag-group">Grupo ${item.grupo}</span>
+                    <span class="card-action">Abrir ➔</span>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+            ${limit < totalInYear ? `
+              <button class="load-more-btn" onclick="loadMore('${year}')">
+                Cargar más (+${Math.min(PAGE_SIZE, totalInYear - limit)})
+              </button>
+            ` : ''}
+          </div>
+        `;
+
+        gallery.appendChild(accordion);
+      });
+    }
+
+    window.toggleYear = function(year) {
+      pageState[year] = pageState[year] || { limit: PAGE_SIZE, open: false };
+      pageState[year].open = !pageState[year].open;
+      render();
+    };
+
+    window.loadMore = function(year) {
+      pageState[year] = pageState[year] || { limit: PAGE_SIZE, open: true };
+      pageState[year].limit += PAGE_SIZE;
+      pageState[year].open = true;
+      render();
+    };
+
+    document.getElementById('searchInput').addEventListener('input', render);
+    document.getElementById('yearSelect').addEventListener('change', render);
+
+    loadData();
+  </script>
+</body>
+</html>
