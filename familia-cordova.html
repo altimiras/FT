@@ -23,7 +23,7 @@
   <main class="container">
     <div class="card">
       <h1 class="title">Familia Córdova - Registros y Enlaces</h1>
-      <p class="subtitle">Filtrado activo: solo registros con categoría <code>2</code></p>
+      <p class="subtitle">Datos desde <code>cordova-link.txt</code> (Filtro: Código 2)</p>
       <div id="contenedor-enlaces">Cargando enlaces...</div>
     </div>
   </main>
@@ -35,25 +35,36 @@
         const contenedor = document.getElementById('contenedor-enlaces');
         contenedor.innerHTML = '';
 
-        const lineas = texto.split('\n');
+        // Eliminamos retornos de carro (\r) para evitar problemas entre Windows/Linux/Android
+        const textoLimpio = texto.replace(/\r/g, '');
+        const lineas = textoLimpio.split('\n');
+
         lineas.forEach(linea => {
           const l = linea.trim();
           if (l && !l.startsWith('#')) {
-            const [anio, codigo, nombre, link] = l.split('|');
+            const partes = l.split('|');
+            
+            // Verificamos que al menos existan los campos necesarios
+            if (partes.length >= 4) {
+              const anio = partes[0].trim();
+              const codigo = partes[1].trim();
+              const nombre = partes[2].trim();
+              const link = partes[3].trim();
 
-            // Filtro: Solo procesa si el segundo campo limpia espacio y es igual a "2"
-            if (codigo && codigo.trim() === '2' && nombre && link) {
-              contenedor.innerHTML += `
-                <div class="item-row">
-                  <div class="info-group">
-                    <span class="tag-anio">${anio}</span>
-                    <span class="item-name">${nombre}</span>
+              // Comparación directa asegurando que solo compare el número 2
+              if (codigo === '2' && nombre !== '' && link !== '') {
+                contenedor.innerHTML += `
+                  <div class="item-row">
+                    <div class="info-group">
+                      <span class="tag-anio">${anio}</span>
+                      <span class="item-name">${nombre}</span>
+                    </div>
+                    <a href="${link}" target="_blank" rel="noopener noreferrer" class="link-btn">
+                      Abrir enlace
+                    </a>
                   </div>
-                  <a href="${link}" target="_blank" rel="noopener noreferrer" class="link-btn">
-                    Abrir enlace
-                  </a>
-                </div>
-              `;
+                `;
+              }
             }
           }
         });
