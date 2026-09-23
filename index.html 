@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Fototeca</title>
-  <!-- Color para la barra del navegador móvil -->
   <meta name="theme-color" content="#1a2e40">
   <style>
     :root {
@@ -32,7 +31,6 @@
     
     .container { max-width: 900px; margin: 0 auto; }
 
-    /* Panel de Controles Fijo con Glassmorphism */
     .controls {
       background: var(--glass-bg);
       backdrop-filter: blur(12px);
@@ -77,7 +75,6 @@
       font-weight: 500;
     }
 
-    /* Acordeón por Año */
     .year-accordion {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -127,7 +124,6 @@
 
     .year-content.open { display: block; }
 
-    /* Rejilla de Tarjetas */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -206,7 +202,7 @@
     .empty-msg {
       text-align: center;
       padding: 40px 20px;
-      color: var(--text-muted);
+      color: #f87171;
       background: var(--card-bg);
       border-radius: var(--radius);
       border: 1px solid var(--border);
@@ -242,10 +238,18 @@
     }
 
     async function loadData() {
+      const counterEl = document.getElementById('counter');
       try {
-        const res = await fetch('albumes.txt');
+        // Evitar caché de Android y GitHub Pages agregando timestamp
+        const timestamp = new Date().getTime();
+        const res = await fetch(`albumes.txt?v=${timestamp}`, { cache: "no-store" });
+
+        if (!res.ok) {
+          throw new Error(`Error HTTP ${res.status}: No se encontró el archivo albumes.txt`);
+        }
+
         const text = await res.text();
-        
+
         rawData = text
           .split('\n')
           .map(line => line.trim())
@@ -259,13 +263,20 @@
               link: parts[3] || '#'
             };
           })
-          .filter(item => item.grupo === '1') // Solo lee los registros con código/grupo "1"
+          .filter(item => item.grupo === '1')
           .filter(item => item.link.startsWith('http'));
+
+        if (rawData.length === 0) {
+          counterEl.innerText = 'El archivo albumes.txt no tiene registros válidos con código 1.';
+          document.getElementById('gallery').innerHTML = '<div class="empty-msg">No hay datos que coincidan con la condición (Código 1 y enlace válido HTTP/HTTPS).</div>';
+          return;
+        }
 
         populateYearSelect();
         render();
       } catch (err) {
-        document.getElementById('counter').innerText = 'Error al cargar el archivo albumes.txt';
+        counterEl.innerText = 'Error al cargar los datos.';
+        document.getElementById('gallery').innerHTML = `<div class="empty-msg">⚠️ ${err.message}</div>`;
       }
     }
 
@@ -292,13 +303,13 @@
         return matchesSearch && matchesYear;
       });
 
-      document.getElementById('counter').innerText = `Mostrando ${filtered.length} de ${rawData.length} álbumes`;
+      document.getElementById('counter').innerText = `Mostrando ${filtered.length} de ${rawData.length} álbumes (Código 1)`;
 
       const gallery = document.getElementById('gallery');
       gallery.innerHTML = '';
 
       if (filtered.length === 0) {
-        gallery.innerHTML = '<div class="empty-msg">No se encontraron álbumes.</div>';
+        gallery.innerHTML = '<div class="empty-msg" style="color: var(--text-muted)">No se encontraron álbumes.</div>';
         return;
       }
 
