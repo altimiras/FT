@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Fototeca - v1.0.6 FIX</title>
+  <style>
+    body { font-family: sans-serif; background: #0f172a; color: #f8fafc; padding: 15px; margin: 0; }
+    .container { max-width: 800px; margin: 0 auto; }
+    .header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px; }
+    .v-tag { background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+    input, select { width: 100%; padding: 10px; margin-bottom: 10px; background: #1e293b; color: white; border: 1px solid #334155; border-radius: 6px; box-sizing: border-box; }
+    .card { background: #1e293b; border: 1px solid #334155; padding: 12px; margin-bottom: 8px; border-radius: 6px; display: block; color: white; text-decoration: none; }
+    .card:hover { background: #334155; }
+    .card-title { font-size: 1rem; font-weight: bold; }
+    .card-meta { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; }
+    .empty { padding: 20px; text-align: center; color: #94a3b8; background: #1e293b; border-radius: 6px; }
+    .debug { background: #1e293b; border: 1px dashed #334155; padding: 8px; border-radius: 6px; font-size: 0.75rem; color: #94a3b8; margin-bottom: 10px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <span style="font-weight:bold;">📷 Mi Fototeca</span>
+      <span class="v-tag">v1.0.6 FIX</span>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="🔍 Buscar por título...">
+    <select id="yearSelect"><option value="">Todos los años</option></select>
+    <div id="counter" style="margin-bottom: 10px; font-size: 0.85rem; color: #94a3b8;">Cargando...</div>
+    <div id="debug" class="debug">Iniciando...</div>
+
+    <div id="gallery"></div>
+  </div>
+
+  <script>
+    let rawData = [];
+
+    async function loadData() {
+      const counterEl = document.getElementById('counter');
+      const debugEl = document.getElementById('debug');
+      try {
+        const timestamp = new Date().getTime();
+        // En GitHub Pages SIEMPRE usar ./ 
+        const url = `./albumes.txt?v=${timestamp}`;
+        debugEl.textContent = `Intentando cargar: ${url}\nDesde: ${location.href}`;
+        
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} en ${url}. Revisa que albumes.txt esté en la misma carpeta que index.html`);
+
+        const text = await res.text();
+        debugEl.textContent += `\n✓ albumes.txt cargado: ${text.length} caracteres, ${text.split('\n').length} líneas`;
+
+        rawData = text
+          .split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0 && !line.startsWith('#'))
+          .map(line => {
+            const parts = line.split('|').map(p => p.trim());
+            return {
+              anio: parts[0] || '0000',
+              grupo: parts[1] || '1',
+              titulo: parts[2] || 'Sin título',
+              link: parts[3] || '#'
+            };
+          });
+
+        const totalSinFiltro = rawData.length;
+        debugEl.textContent += `\nSin filtros: ${totalSinFiltro} items`;
+
+        // FILTROS ORIGINALES - ahora con log
+        const soloGrupo1 = rawData.filter(item => item.grupo.toString().trim() === '1');
+        debugEl.textContent += `\nDespués filtro grupo=1: ${soloGrupo1.length}`;
+        
+        const conHttp = soloGrupo1.filter(item => item.link.toLowerCase().startsWith('http'));
+        debugEl.textContent += `\nDespués filtro http: ${conHttp.length}`;
+
+        rawData = conHttp;
+
+        if(rawData.length === 0 && totalSinFiltro > 0){
+          debugEl.textContent += `\n⚠️ TODOS FILTRADOS! Revisa formato. Ej: "2023 | 1 | Título | https://..."`;
+        }
+
+        populateYears();
+        render();
+      } catch (err) {
+        debugEl.textContent += `\n❌ ERROR: ${err.message}`;
+        counterEl.innerText = "Error al cargar los datos.";
+        document.getElementById('gallery').innerHTML = `<div class="empty">${err.message}<br><br>Verifica en GitHub: Settings > Pages > Source = main / root<br>Y que el archivo se llame exactamente index.html (minúsculas)</div>`;
+        console.error(err);
+      }
+    }
+
+    function populateYears() {
+      const yearSelect = document.getElementById('yearSelect');
+      yearSelect.innerHTML = '<option value="">Todos los años</option>';
+      const years = [...new Set(rawData.map(d => d.anio))].sort((a, b) => b.localeCompare(a));
+      years.forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y === '0000' ? 'Sin Año' : `Año ${y}`;
+        yearSelect.appendChild(opt);
+      });
+    }
+
+    function render() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const year = document.getElementById('yearSelect').value;
+
+      const filtered = rawData.filter(item => {
+        const matchesSearch = item.titulo.toLowerCase().includes(search);
+        const matchesYear = !year || item.anio === year;
+        return matchesSearch && matchesYear;
+      });
+
+      document.getElementById('counter').innerText = `Mostrando ${filtered.length} de ${rawData.length} álbumes`;
+
+      const gallery = document.getElementById('gallery');
+      if (filtered.length === 0) {
+        gallery.innerHTML = '<div class="empty">No se encontraron álbumes.</div>';
+        return;
+      }
+
+      gallery.innerHTML = filtered.map(item => `
+        <a class="card" href="${item.link}" target="_blank" rel="noopener">
+          <div class="card-title">${item.titulo}</div>
+          <div class="card-meta">Año: ${item.anio} | Código: ${item.grupo}</div>
+        </a>
+      `).join('');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', render);
+    document.getElementById('yearSelect').addEventListener('change', render);
+
+    loadData();
+  </script>
+</body>
+</html>
