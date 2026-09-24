@@ -3,49 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Fototeca</title>
+  <title>Mi Fototeca - Versión 1</title>
   <style>
     body { font-family: sans-serif; background: #0f172a; color: #f8fafc; padding: 15px; margin: 0; }
     .container { max-width: 800px; margin: 0 auto; }
     .header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px; }
-    input, select { width: 100%; padding: 10px; margin-bottom: 10px; background: #1e293b; color: white; border: 1px solid #334155; border-radius: 6px; box-sizing: border-box; }
+    .badge { font-size: 0.85rem; font-weight: bold; background: #334155; color: #38bdf8; padding: 4px 10px; border-radius: 999px; }
+    input, select { width: 100%; padding: 10px; margin-bottom: 10px; background: #1e293b; color: white; border: 1px solid #334155; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+    button { width: 100%; padding: 12px; background: #38bdf8; color: #0f172a; border: 0; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; }
     .card { background: #1e293b; border: 1px solid #334155; padding: 12px; margin-bottom: 8px; border-radius: 6px; display: block; color: white; text-decoration: none; }
     .card:hover { background: #334155; }
     .card-title { font-size: 1rem; font-weight: bold; }
     .card-meta { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; }
     .empty { padding: 20px; text-align: center; color: #94a3b8; background: #1e293b; border-radius: 6px; }
+    /* Acordeón por año */
+    details.year { margin-bottom: 8px; }
+    details.year > summary { cursor: pointer; background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 12px; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    details.year > summary::-webkit-details-marker { display: none; }
+    details.year > summary::after { content: '▸'; color: #94a3b8; transition: transform .15s; }
+    details.year[open] > summary::after { transform: rotate(90deg); }
+    details.year > summary .n { font-weight: normal; font-size: 0.8rem; color: #94a3b8; margin-left: 8px; flex: 1; }
+    details.year[open] > summary { margin-bottom: 8px; background: #334155; }
+    /* Acceso */
+    #gate { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; }
+    #gate h2 { margin: 0 0 6px; font-size: 1.1rem; }
+    #gate p { margin: 0 0 14px; color: #cbd5e1; }
+    #gateMsg { color: #f87171; font-size: 0.9rem; min-height: 1.2em; margin-bottom: 10px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <span style="font-weight:bold;">📷 Mi Fototeca</span>
+      <span class="badge">Versión 1</span>
     </div>
-    <input type="text" id="searchInput" placeholder="🔍 Buscar por título...">
-    <select id="yearSelect"><option value="">Todos los años</option></select>
-    <div id="counter" style="margin-bottom: 10px; font-size: 0.85rem; color: #94a3b8;"></div>
-    <div id="gallery"></div>
+
+    <!-- Pantalla de acceso -->
+    <div id="gate">
+      <h2>🔒 Acceso</h2>
+      <p id="gateQuestion"></p>
+      <input type="text" id="gateInput" placeholder="Tu respuesta..." autocomplete="off" autocapitalize="off">
+      <div id="gateMsg"></div>
+      <button id="gateBtn" type="button">Entrar</button>
+    </div>
+
+    <!-- Contenido (oculto hasta acceder) -->
+    <div id="app" style="display:none;">
+      <input type="text" id="searchInput" placeholder="🔍 Buscar por título...">
+      <select id="yearSelect"><option value="">Todos los años</option></select>
+      <div id="counter" style="margin-bottom: 10px; font-size: 0.85rem; color: #94a3b8;"></div>
+      <div id="gallery"></div>
+    </div>
   </div>
   <script>
+    /* ============ CONFIGURACIÓN DE ESTA VERSIÓN ============ */
+    const CODIGO = '1'; // código de álbumes que muestra esta versión
+    const ACCESO = {
+      pregunta: 'como era el nombre de la abuela?',
+      // Respuestas válidas (en minúsculas; se ignoran mayúsculas, tildes y espacios de más)
+      respuestas: ['ursula']
+    };
+    /* ======================================================= */
+
     let rawData = [];
+
+    function norm(s){ return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim(); }
+
+    /* ---- Control de acceso ---- */
+    const KEY = 'fototeca_ok_v' + CODIGO;
+    function yaAutorizado(){ try { return sessionStorage.getItem(KEY) === '1'; } catch(e){ return false; } }
+    function guardarAcceso(){ try { sessionStorage.setItem(KEY, '1'); } catch(e){} }
+    function entrar(){
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      loadData();
+    }
+    function verificar(){
+      const r = norm(document.getElementById('gateInput').value);
+      if (r && ACCESO.respuestas.some(x => norm(x) === r)) { guardarAcceso(); entrar(); }
+      else {
+        document.getElementById('gateMsg').textContent = 'Respuesta incorrecta. Inténtalo de nuevo.';
+        document.getElementById('gateInput').select();
+      }
+    }
+    document.getElementById('gateQuestion').textContent = ACCESO.pregunta;
+    document.getElementById('gateBtn').addEventListener('click', verificar);
+    document.getElementById('gateInput').addEventListener('keydown', e => { if (e.key === 'Enter') verificar(); });
+
+    /* ---- Datos ---- */
     async function loadData() {
       try {
         const res = await fetch(`./albumes.txt?v=${Date.now()}`, { cache: "no-store" });
-        if (!res.ok) throw new Error();
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         const text = await res.text();
         rawData = text.split('\n').map(l=>l.trim()).filter(l=>l.length>0 && !l.startsWith('#')).map(line=>{
           const p=line.split('|').map(x=>x.trim());
           return {anio:p[0]||'0000', grupo:p[1]||'1', titulo:p[2]||'Sin título', link:p[3]||'#'};
-        }).filter(i=>i.grupo==='1').filter(i=>i.link.toLowerCase().startsWith('http'));
+        }).filter(i=>i.grupo===CODIGO).filter(i=>i.link.toLowerCase().startsWith('http'));
         populateYears(); render();
       } catch(e){
-        document.getElementById('gallery').innerHTML = `<div class="empty">No se pudo cargar albumes.txt</div>`;
+        document.getElementById('gallery').innerHTML = `<div class="empty">No se pudo cargar albumes.txt<br><small>${e.message}</small></div>`;
       }
     }
+    function yearLabel(y){ return y==='0000' ? 'Sin Año' : `Año ${y}`; }
     function populateYears(){
       const sel=document.getElementById('yearSelect'); sel.innerHTML='<option value="">Todos los años</option>';
       [...new Set(rawData.map(d=>d.anio))].sort((a,b)=>b.localeCompare(a)).forEach(y=>{
-        const o=document.createElement('option'); o.value=y; o.textContent=y==='0000'?'Sin Año':`Año ${y}`; sel.appendChild(o);
+        const o=document.createElement('option'); o.value=y; o.textContent=yearLabel(y); sel.appendChild(o);
       });
     }
     function render(){
@@ -55,11 +119,20 @@
       document.getElementById('counter').innerText = f.length ? `Mostrando ${f.length} de ${rawData.length} álbumes` : '';
       const g=document.getElementById('gallery');
       if(!f.length){ g.innerHTML='<div class="empty">No se encontraron álbumes.</div>'; return; }
-      g.innerHTML=f.map(i=>`<a class="card" href="${i.link}" target="_blank" rel="noopener"><div class="card-title">${i.titulo}</div><div class="card-meta">Año: ${i.anio}</div></a>`).join('');
+      // Agrupar por año (más reciente primero). Cerrado al inicio; se abre solo si hay búsqueda o año elegido.
+      const abrir = (s.trim() !== '' || y !== '') ? ' open' : '';
+      const grupos = {};
+      f.forEach(i => { (grupos[i.anio] = grupos[i.anio] || []).push(i); });
+      g.innerHTML = Object.keys(grupos).sort((a,b)=>b.localeCompare(a)).map(anio =>
+        `<details class="year"${abrir}><summary><span>${yearLabel(anio)}</span><span class="n">${grupos[anio].length} álbum${grupos[anio].length===1?'':'es'}</span></summary>` +
+        grupos[anio].map(i=>`<a class="card" href="${i.link}" target="_blank" rel="noopener"><div class="card-title">${i.titulo}</div><div class="card-meta">Año: ${i.anio}</div></a>`).join('') +
+        `</details>`
+      ).join('');
     }
     document.getElementById('searchInput').addEventListener('input',render);
     document.getElementById('yearSelect').addEventListener('change',render);
-    loadData();
+
+    if (yaAutorizado()) entrar();
   </script>
 </body>
 </html>
