@@ -25,10 +25,18 @@
     details.year > summary .n { font-weight: normal; font-size: 0.8rem; color: #94a3b8; margin-left: 8px; flex: 1; }
     details.year[open] > summary { margin-bottom: 8px; background: #334155; }
     /* Acceso */
-    #gate { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; }
-    #gate h2 { margin: 0 0 6px; font-size: 1.1rem; }
-    #gate p { margin: 0 0 14px; color: #cbd5e1; }
-    #gateMsg { color: #f87171; font-size: 0.9rem; min-height: 1.2em; margin-bottom: 10px; }
+    #gate { text-align: center; background: linear-gradient(160deg, #1e293b 0%, #172033 100%); border: 1px solid #334155; border-radius: 16px; padding: 32px 22px 26px; margin-top: 8vh; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+    #gate .icon { width: 72px; height: 72px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; background: #0f172a; border: 2px solid #38bdf8; border-radius: 50%; box-shadow: 0 0 0 6px rgba(56,189,248,.12); }
+    #gate h1 { margin: 0; font-size: 1.6rem; letter-spacing: .5px; color: #f8fafc; }
+    #gate .sub { margin: 6px 0 0; font-size: 1rem; color: #38bdf8; }
+    #gate .sep { width: 60px; height: 2px; background: #334155; margin: 20px auto; border-radius: 2px; }
+    #gate .q { margin: 0 0 14px; font-size: 1.05rem; color: #e2e8f0; line-height: 1.4; }
+    #gate input { text-align: center; font-size: 1.05rem; padding: 12px; margin-bottom: 8px; }
+    #gate input:focus { outline: none; border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56,189,248,.2); }
+    #gateMsg { color: #f87171; font-size: 0.9rem; min-height: 1.3em; margin-bottom: 8px; }
+    #gate .hint { margin-top: 16px; font-size: 0.75rem; color: #64748b; }
+    .shake { animation: shake .35s; }
+    @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
   </style>
 </head>
 <body>
@@ -40,11 +48,15 @@
 
     <!-- Pantalla de acceso -->
     <div id="gate">
-      <h2>🔒 Acceso</h2>
-      <p id="gateQuestion"></p>
-      <input type="text" id="gateInput" placeholder="Tu respuesta..." autocomplete="off" autocapitalize="off">
+      <div class="icon">📷</div>
+      <h1 id="gateTitle"></h1>
+      <p class="sub" id="gateSub"></p>
+      <div class="sep"></div>
+      <p class="q" id="gateQuestion"></p>
+      <input type="text" id="gateInput" placeholder="Escribe tu respuesta" autocomplete="off" autocapitalize="off">
       <div id="gateMsg"></div>
       <button id="gateBtn" type="button">Entrar</button>
+      <div class="hint">Acceso reservado a la familia</div>
     </div>
 
     <!-- Contenido (oculto hasta acceder) -->
@@ -59,9 +71,11 @@
     /* ============ CONFIGURACIÓN DE ESTA VERSIÓN ============ */
     const CODIGO = '2'; // código de álbumes que muestra esta versión
     const ACCESO = {
-      pregunta: 'como se llamaba el que fué marino? ',
+      titulo: 'Archivo Fotográfico',
+      subtitulo: 'Familia Córdova',
+      pregunta: '¿Cómo se llamaba el que fue marino?',
       // Respuestas válidas (en minúsculas; se ignoran mayúsculas, tildes y espacios de más)
-      respuestas: ['Raul']
+      respuestas: ['Raúl']
     };
     /* ======================================================= */
 
@@ -83,9 +97,12 @@
       if (r && ACCESO.respuestas.some(x => norm(x) === r)) { guardarAcceso(); entrar(); }
       else {
         document.getElementById('gateMsg').textContent = 'Respuesta incorrecta. Inténtalo de nuevo.';
+        const g = document.getElementById('gate'); g.classList.remove('shake'); void g.offsetWidth; g.classList.add('shake');
         document.getElementById('gateInput').select();
       }
     }
+    document.getElementById('gateTitle').textContent = ACCESO.titulo;
+    document.getElementById('gateSub').textContent = ACCESO.subtitulo;
     document.getElementById('gateQuestion').textContent = ACCESO.pregunta;
     document.getElementById('gateBtn').addEventListener('click', verificar);
     document.getElementById('gateInput').addEventListener('keydown', e => { if (e.key === 'Enter') verificar(); });
