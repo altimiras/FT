@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Fototeca</title>
+  <title>Mi Fototeca - Versión 1</title>
   <style>
     body { font-family: sans-serif; background: #0f172a; color: #f8fafc; padding: 15px; margin: 0; }
     .container { max-width: 800px; margin: 0 auto; }
@@ -20,6 +20,7 @@
   <div class="container">
     <div class="header">
       <span style="font-weight:bold;">📷 Mi Fototeca</span>
+      <span style="font-size:0.85rem; font-weight:bold; background:#334155; color:#38bdf8; padding:4px 10px; border-radius:999px;">Versión 1</span>
     </div>
     <input type="text" id="searchInput" placeholder="🔍 Buscar por título...">
     <select id="yearSelect"><option value="">Todos los años</option></select>
@@ -27,19 +28,20 @@
     <div id="gallery"></div>
   </div>
   <script>
+    const CODIGO = '1'; // código de álbumes que muestra esta versión
     let rawData = [];
     async function loadData() {
       try {
         const res = await fetch(`./albumes.txt?v=${Date.now()}`, { cache: "no-store" });
-        if (!res.ok) throw new Error();
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         const text = await res.text();
         rawData = text.split('\n').map(l=>l.trim()).filter(l=>l.length>0 && !l.startsWith('#')).map(line=>{
           const p=line.split('|').map(x=>x.trim());
           return {anio:p[0]||'0000', grupo:p[1]||'1', titulo:p[2]||'Sin título', link:p[3]||'#'};
-        }).filter(i=>i.grupo==='1').filter(i=>i.link.toLowerCase().startsWith('http'));
+        }).filter(i=>i.grupo===CODIGO).filter(i=>i.link.toLowerCase().startsWith('http'));
         populateYears(); render();
       } catch(e){
-        document.getElementById('gallery').innerHTML = `<div class="empty">No se pudo cargar albumes.txt</div>`;
+        document.getElementById('gallery').innerHTML = `<div class="empty">No se pudo cargar albumes.txt<br><small>${e.message}</small></div>`;
       }
     }
     function populateYears(){
