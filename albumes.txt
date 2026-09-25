@@ -114,7 +114,7 @@ Sin Año|1|Selección de fotos|https://photos.app.goo.gl/S25JZqLi8BKvsgfp6
 2019|1|Buenos Aires dia 6|https://photos.app.goo.gl/NwFevevKB7X3ZZcC8
 2019|1|Buenos Aires dia 5|https://photos.app.goo.gl/jk4JhEXs8VfmXUMP8
 2019|1|Buenos Aires dia 4|https://photos.app.goo.gl/GBAxYS5vNM3UUp147
-2019||Buenos Aires dia 3|https://photos.app.goo.gl/HLy68X95fLss1T6s8
+2019|1|Buenos Aires dia 3|https://photos.app.goo.gl/HLy68X95fLss1T6s8
 2019|1|Buenos Aires dia 2|https://photos.app.goo.gl/QM53tzKT8Pi4Gpee6
 2019|1|Buenos Aires dia 1|https://photos.app.goo.gl/RHVb3Yi3XbVLFSBZ6
 2019|1|Mendoza peliculas|https://photos.app.goo.gl/33ksKpdqjfTSidNj9
@@ -133,7 +133,7 @@ Sin Año|1|Selección de fotos|https://photos.app.goo.gl/S25JZqLi8BKvsgfp6
 2020|1|Villarica|https://photos.app.goo.gl/LinBGvQ48Euwf8Vr6
 2020|1|Pucon|https://photos.app.goo.gl/kjFoiujpuq3kifBS8
 2020|1|Pucon|https://photos.app.goo.gl/aPahM6f1sHJcrMW79
-2020||Enero|https://photos.app.goo.gl/zdJgUCST5ProS7pN9
+2020|1|Enero|https://photos.app.goo.gl/zdJgUCST5ProS7pN9
 2020|1|Villarica Concepción|https://photos.app.goo.gl/NVdfn5KBKYMWng37A
 2020|1|Villarica Pto Saavedra|https://photos.app.goo.gl/4iaUKfmn2qppZxFCA
 2020|1|Febrero hogar|https://photos.app.goo.gl/nYR2E1UxNm4nxgvc8
@@ -159,7 +159,7 @@ Sin Año|1|Jaime Altimiras Lampré - 3|https://photos.app.goo.gl/8kyqYtNavD8WJj4
 Sin Año|1|Maricarmen Altimiras - 3|https://photos.app.goo.gl/T2swDWcTSaXpE8nJA
 Sin Año|1|Inés Altimiras Lampré - 3|https://photos.app.goo.gl/eht4hu9tixfPWm6f7
 Sin Año|2|Soledad Córdova Tapia - 3|https://photos.app.goo.gl/ECe1vbSFhkfAjGZc6
-2025||Cumpleaños Iván|https://photos.app.goo.gl/qZWgResGEWTtmgph9
+2025|2|Cumpleaños Iván|https://photos.app.goo.gl/qZWgResGEWTtmgph9
 Sin Año|1|José Altimiras Lampré - 3|https://photos.app.goo.gl/FgidC6gggT4JNva18
 2009|1|Asado Betsy|https://photos.app.goo.gl/191AsQXoX4QgbbSb7
 Sin Año|2|Emiliano Córdova Reyes - 2|https://photos.app.goo.gl/RUrsf1ZLzN6JJcvw7
