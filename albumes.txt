@@ -122,7 +122,7 @@ Sin Año|1|114-Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
 2011|1|121-Varios|https://photos.app.goo.gl/ZtTHb2zRj8S5wX4c7
 2011|1|122-Casa nueva|https://photos.app.goo.gl/K4w7B9xpRiXyM2JQ9
 2012|1|123-Club hipico|https://photos.app.goo.gl/kmp7qSTXHMERAT9w9
-2012|2|124-Para tios Elsa y Jorge|https://photos.app.goo.gl/3FN5Y3KZqvUDSXcr7
+2012|3|124-Para tios Elsa y Jorge|https://photos.app.goo.gl/3FN5Y3KZqvUDSXcr7
 2012|1|125-viña diciembre|https://photos.app.goo.gl/6naHDFu85exSX5d78
 2012|1|126-Drop Box|https://photos.app.goo.gl/44nVCSRzXiZXggGF7
 2012|1|127-Oficina feb - 2012|https://photos.app.goo.gl/fHNGM3TX5MewJWiU7
@@ -253,7 +253,7 @@ Sin Año|1|114-Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
 2015|1|252-Parque Metropolitano 13feb2015|https://photos.app.goo.gl/HNRAkGQXMVjUE4vt6
 2015|1|253-Parque Renato Poblete 11feb2015|https://photos.app.goo.gl/2d7A3kTVeSUZkmEb7
 2015|1|254-Viaje a Santiago 12ene2015|https://photos.app.goo.gl/k7sayxwkvhSdq3zs6
-2016|1|255-2021 enero Agosto joyas|https://photos.app.goo.gl/ukHWdUkPiS5kuU6R9
+2016|3|255-2021 enero Agosto joyas|https://photos.app.goo.gl/ukHWdUkPiS5kuU6R9
 2017|1|256-Año nuevo|https://photos.app.goo.gl/dmhVxjjfsqEjVg9C8
 2017|1|257-Día patrimonio|https://photos.app.goo.gl/f6kJnm5vnbZDfZj79
 2017|1|258-Villa Portales|https://photos.app.goo.gl/XHs9a5bMUCXHmzKf6
@@ -262,7 +262,7 @@ Sin Año|1|114-Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
 2017|1|261-Jueves a la tarde en Santiago 2017 sept|https://photos.app.goo.gl/DxH5hVsLyax4epGy8
 2018|1|262-Casa Gonzalo|https://photos.app.goo.gl/HxkmMrhsbliF22lQ2
 2018|1|263-Videos varios|https://photos.app.goo.gl/fvqBP39n2FWdckg22
-2018|2|264-Álbum Familiar Córdova 2018|https://photos.app.goo.gl/ejemplo2018
+2018|3|264-Álbum Familiar Córdova 2018|https://photos.app.goo.gl/ejemplo2018
 2018|1|265-Cumpleaños Toño Orellana 2018|https://photos.app.goo.gl/vhnvq3Z8NUMNfszs7
 2018|1|266-Fin de semana en Santiago de Chile enero 2018|https://photos.app.goo.gl/QAkrEpa9zGy4Sqnm9
 2018|1|267-Jueves en Santiago de Chile 2018|https://photos.app.goo.gl/PuQbWsE5ekNF67gYA
@@ -313,7 +313,7 @@ Sin Año|1|114-Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
 2019|1|312-Navidad Maipú|https://photos.app.goo.gl/4AhMSRrapeWYUtu38
 2019|1|313-Navidad hogar Limache|https://photos.app.goo.gl/cvHHYv2j15ejZ9Xv7
 2019|1|314-Los Dominicos|https://photos.app.goo.gl/h7zE4fqGpArVMJWr9
-2019|2|315-Reunión Familiar Córdova-Tapia 2019|https://photos.app.goo.gl/ejemplo2019
+2019|3|315-Reunión Familiar Córdova-Tapia 2019|https://photos.app.goo.gl/ejemplo2019
 2019|1|316-16 dic 2019 Yamaha|https://photos.app.goo.gl/ERMT7AEcUTQcq4rD7
 2019|1|317-Yoko|https://photos.app.goo.gl/sYgh927YrXC3hnKo9
 2019|1|318-Estadio USACH|https://photos.app.goo.gl/FLWAcQWL9fr3inR6A
@@ -329,16 +329,16 @@ Sin Año|1|114-Yoko|https://photos.app.goo.gl/xUVThxTzEZPmRXsAA
 2020|1|328-Jardin Japones|https://photos.app.goo.gl/DDHaVco8E7rSFCgp6
 2020|1|329-Registros Históricos y Genealogía|https://photos.app.goo.gl/ejemplo2020
 2020|1|330-16 dic 2020 Juguetería Apumanque|https://photos.app.goo.gl/BpWbdHcvryxJC5Vb8
-2021|2|331-Encuentro Córdova Tapia 2021|https://photos.app.goo.gl/ejemplo2021
+2021|3|331-Encuentro Córdova Tapia 2021|https://photos.app.goo.gl/ejemplo2021
 2021|1|332-Plaza Maipú - Domingo 2021|https://photos.app.goo.gl/wscET3JVBgx9Vs2e8
 2021|1|333-18 septiembre 2021|https://photos.app.goo.gl/T2Jy22976PVW7rAb9
-2021|2|334-2021 sept diciembre|https://photos.app.goo.gl/DpzhqcJDkqEc8xBR7
+2021|1|334-2021 sept diciembre|https://photos.app.goo.gl/DpzhqcJDkqEc8xBR7
 2021|1|335-25 sep 2021 cumple  Mony|https://photos.app.goo.gl/vxcTQHoMyHXTdzv4A
 2021|1|336-24 octubre 2021 paseo viña|https://photos.app.goo.gl/z7YzGtd5zL6XyVUv5
 2021|1|337-25 diciembre 2021|https://photos.app.goo.gl/FTBGGmaBPdjMwEUx8
 2021|1|338-Navidad 2021|https://photos.app.goo.gl/aQe1ZG7qe12aAYeXA
-2021|2|339-31 oct 2021 plaza armas|https://photos.app.goo.gl/mFFTUUs82KNtcGnN7
-2021|2|340-26 may 2021 - 28 jul 2021|https://photos.app.goo.gl/wovBwVNEfgZCrgvR6
+2021|1|339-31 oct 2021 plaza armas|https://photos.app.goo.gl/mFFTUUs82KNtcGnN7
+2021|1|340-26 may 2021 - 28 jul 2021|https://photos.app.goo.gl/wovBwVNEfgZCrgvR6
 2021|1|341-1 mar 2021 vacunacion|https://photos.app.goo.gl/fUGgvKuHeENT7fjt5
 2021|1|342-15 mar 2021 Trabajos casa|https://photos.app.goo.gl/qDiMNhJJYtmzSUjGA
 2022|1|343-Nov Yarur|https://photos.app.goo.gl/FXSThvjPPCgqacev7
