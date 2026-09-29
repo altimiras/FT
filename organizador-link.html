@@ -195,16 +195,36 @@
 
 <script>
     let registros = [];
+    let ultimosDuplicados = 0;
+
+    function empiezaConNumero(nombre) {
+        return /^\s*\d/.test(nombre || '');
+    }
 
     async function procesarArchivos(files) {
         if (!files.length) return;
 
         const mapaLinks = new Map();
 
+        let duplicadosEliminados = 0;
+
+        // Si el link ya existe, se conserva el registro cuyo nombre empieza con número.
+        // Si ambos (o ninguno) empiezan con número, se mantiene el que ya estaba.
+        const agregarRegistro = (reg) => {
+            if (!reg.link) return;
+            const existente = mapaLinks.get(reg.link);
+            if (!existente) {
+                mapaLinks.set(reg.link, reg);
+                return;
+            }
+            duplicadosEliminados++;
+            if (!empiezaConNumero(existente.nombre) && empiezaConNumero(reg.nombre)) {
+                mapaLinks.set(reg.link, reg);
+            }
+        };
+
         // Conservar los registros que ya estaban en la tabla
-        registros.forEach(reg => {
-            if (reg.link) mapaLinks.set(reg.link, reg);
-        });
+        registros.forEach(agregarRegistro);
 
         // Leer los nuevos archivos
         for (const file of files) {
@@ -222,14 +242,13 @@
                     const nombre = partes[2].trim();
                     const link = partes.slice(3).join('|').trim(); // Por si el link contiene '|'
 
-                    if (link && !mapaLinks.has(link)) {
-                        mapaLinks.set(link, { fecha, codigo, nombre, link });
-                    }
+                    agregarRegistro({ fecha, codigo, nombre, link });
                 }
             });
         }
 
         registros = Array.from(mapaLinks.values());
+        ultimosDuplicados = duplicadosEliminados;
         renderizarTabla();
         // Limpiar el input para permitir re-subir el mismo archivo si es necesario
         document.getElementById('fileInput').value = '';
@@ -256,7 +275,7 @@
         document.getElementById('tableContainer').style.display = tieneRegistros ? 'block' : 'none';
         document.getElementById('statsBar').style.display = tieneRegistros ? 'flex' : 'none';
         document.getElementById('btnDescargar').disabled = !tieneRegistros;
-        document.getElementById('statsText').innerText = `Total registros únicos (por Link): ${registros.length}`;
+        document.getElementById('statsText').innerText = `Total registros únicos (por Link): ${registros.length}` + (ultimosDuplicados ? ` — duplicados eliminados: ${ultimosDuplicados}` : '');
     }
 
     function actualizarRegistro(index, campo, valor) {
