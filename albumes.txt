@@ -161,7 +161,7 @@ Sin Año|1|161@& Carmen Lampré Montes|https://photos.google.com/album/AF1QipNQB
 Sin Año|1|162@& colorear fotos|https://photos.app.goo.gl/WWAb23xYXNU5HJbp7
 Sin Año|2|163@& con Tía Amandina - Marina Isabel|https://photos.app.goo.gl/XJyam4v49PUTNREu5
 Sin Año|2|164@& Elsa Cespedes|https://photos.app.goo.gl/yzMaKQNf5H9fr8FE7
-Sin Año|2|165@& Emiliano Cordova Reyes|https://photos.google.com/album/AF1QipN5-H3BhfvWLDdg-R2OgbIBC2pNib5R8W2fDHPVu6e0RlfOpJtPnZakdz5LshzWXg
+Sin Año|2|165@& Emiliano Cordova Reyes|https://photos.app.goo.gl/7vxxCbeqKF7JU8JZA
 Sin Año|2|166@& Esperanza Cordova López|https://photos.app.goo.gl/gdD156kxatTLuSe88
 Sin Año|1|167@& Evelyn Altimiras Martínez|https://photos.app.goo.gl/HQbRdpTAyRNr4QRw7
 Sin Año|1|168@& fachada|https://photos.app.goo.gl/XhjdWQ4cAtus1wDt5
@@ -268,7 +268,7 @@ Sin Año|1|266@videos Sony|https://photos.app.goo.gl/JKACpfCn8m6hx4e16
 1990|1|269@Varios 13 1990|https://photos.app.goo.gl/an17BMMYfq4BVhsj9
 2000|1|270@Mar 2000 -50 años matrimonio|https://photos.app.goo.gl/EgnRHRFzrN4Rawu77
 2007|1|271@7 Dic 2007 Graduación de Natalia|https://photos.app.goo.gl/fjqDrT9VDe1Xrw817
-2008|1|272@2008|https://photos.app.goo.gl/She9JduaYpko1hcDA
+2008|1|272@sagre _ casa Mony|https://photos.app.goo.gl/She9JduaYpko1hcDA
 2009|1|273@2009|https://photos.app.goo.gl/8vpbdLudUJxqsdeN9
 2010|1|274@Terremoto 27 feb 2010 Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipP13UlmoFbrG-SLaGqToL2kvKBezHr22XIGGb0wmMyzIgatTTCd6Mid52IaHQ4Rjw
 2011|1|275@Campana Cima Dic 2011|https://photos.app.goo.gl/DXTQggoyT9WML5fBA
@@ -1437,7 +1437,6 @@ Sin Año|1|1642@yoyo|https://photos.app.goo.gl/Dc3RSxgJxg8CLMeU9
 1963|1|1699@Escuela Francisco A. Olea 1963|https://photos.app.goo.gl/UukAcSrbr7rJJsKp8
 1976|1|1700@1976-77|https://photos.app.goo.gl/Qsz17LQq4XDv1t1h8
 1977|1|1701@Mochileando el sur 1977-1978|https://photos.app.goo.gl/yAYA8cfNdFXTuyct6
-2006|1|1702@2006|https://photos.google.com/album/AF1QipPOa4b8lV5-exAjut3IGZlvQofEf2lj7p2sGuMI
 2007|1|1703@2007|https://photos.app.goo.gl/T11xrohCeFsnV2UQ6
 2008|1|1704@2008|https://photos.app.goo.gl/QMSKygukE5ggR5Du8
 2008|1|1705@2008 VARIOS|https://photos.app.goo.gl/QSEQJYKRhZtwYDt79
