@@ -1,4 +1,4 @@
-Año|1|YY1 @ nombre|link
+Año|código|nombre|link
 1963|1|YY2 @ Escuela Francisco A. Olea 1963|https://photos.app.goo.gl/UukAcSrbr7rJJsKp8
 1976|1|YY3 @ 1976-77|https://photos.app.goo.gl/Qsz17LQq4XDv1t1h8
 1977|1|YY4 @ Mochileando el sur 1977-1978|https://photos.app.goo.gl/yAYA8cfNdFXTuyct6
@@ -245,7 +245,6 @@ Sin Año|1|YY244 @ 9 días en Santiago|https://photos.app.goo.gl/boLbjEU8sTnRLSp
 Sin Año|1|YY245 @ Almuerzo en la Vega Chica|https://photos.app.goo.gl/axePRwfvJ3PWs1wC8
 Sin Año|2|YY246 @ Amandina Córdova López|https://photos.app.goo.gl/4BbzTt6Mn7vsaGAd9
 Sin Año|2|YY247 @ Antiguas de Tía Marina Córdova|https://photos.app.goo.gl/EYRwYDwHV1qikx567
-Sin Año|1|YY248 @ Antonio Orellana Sin elementos Más opciones|https://photos.google.com/album/AF1QipOqLsyuAXDwnV6PZbMoBrC9qtG9_ZkZMG-EAmeP
 Sin Año|1|YY249 @ año nuevo2014|https://photos.app.goo.gl/aSmCHKMjG4cJXKfW7
 Sin Año|1|YY250 @ ARte Rock|https://photos.app.goo.gl/Lq6LqLtwJg986Fvy9
 Sin Año|1|YY251 @ Barrio Italia en Santiago|https://photos.app.goo.gl/XPCPC58azZcFL9xx6
@@ -334,11 +333,8 @@ Sin Año|1|YY333 @ Inés Altimiras|https://photos.app.goo.gl/bBuK3d35EyMPQTve7
 Sin Año|1|YY334 @ instalando chapa y banca patio|https://photos.google.com/album/AF1QipN-OOvGCkEC-RVjuHnE-OQScdV8shr1dtV-u2_N
 Sin Año|2|YY335 @ Iris Soledad Córdova Tapia|https://photos.app.goo.gl/DHNuExMZth3UKBSr5
 Sin Año|2|YY336 @ Iris Tapia Sandoval (Córdova)|https://photos.app.goo.gl/xtSkuazdP3D9uaqY7
-Sin Año|2|YY337 @ Iván Córdova Tapia Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipPzpWnZjboNT0JcqzADF61aMd3TLgC7aHK8LcM1v2YoZSxaLVnMJtZ7n1jeeNAv7Q
 Sin Año|2|YY338 @ Iván Pablo Córdova|https://photos.app.goo.gl/fL99jCCMHLb7CuAUA
 Sin Año|1|YY339 @ Jaime Altimiras Lampré|https://photos.app.goo.gl/a8aMjDLbRrR9mGRC9
-Sin Año|1|YY340 @ Joaquín Altimiras Lampré Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipO1YjmDcOi00lDJ8JoGbAwWHXJoZx1dumHRtKRgfy_h5v6P9DMSTD1JwkF7-w3J7Q
-Sin Año|1|YY341 @ Joaquín Altimiras Lampré Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipP_A8P_NalDgw0g1nl5AI3EDxQ9eUsd6W0X3DSnHc4c828r4k2w_52V_h1v4WuDdA
 Sin Año|1|YY342 @ Jose Altimiras Lampre|https://photos.app.goo.gl/UdQqGY3asbSR5X2v5
 Sin Año|1|YY343 @ José Altimiras Lampré|https://photos.app.goo.gl/Pm6jFqvVrRhHwN7K7
 Sin Año|1|YY344 @ Jose Altimiras Lampre 2|https://photos.app.goo.gl/FgidC6gggT4JNva18
@@ -378,12 +374,10 @@ Sin Año|1|YY377 @ Lunes en Limache y en Tiltil 13jun2016|https://photos.app.goo
 Sin Año|2|YY378 @ Maria Eugenia Silva (Córdova)|https://photos.app.goo.gl/9tnFJQWenKmuGqHL9
 Sin Año|2|YY379 @ Marina Córdova López|https://photos.app.goo.gl/PhiFjucdMszW5N8j7
 Sin Año|2|YY380 @ Marina Isabel Utillanos Cordova|https://photos.app.goo.gl/Nma4CGH4mXRk1iBJA
-Sin Año|2|YY381 @ Mario Enrique Córdova Sin elementos Más opciones|https://photos.google.com/album/AF1QipOoOG4GOl8kr8dl3Lx2Z7L9zqylQssbaAk2X-Ow
 Sin Año|1|YY382 @ Martes en Santiago de Chile|https://photos.app.goo.gl/8QzbThTW9Zjs33se9
 Sin Año|1|YY383 @ Martes en Santiago dic2016|https://photos.app.goo.gl/ukHWdUkPiS5kuU6R9
 Sin Año|1|YY384 @ Mas -caRas|https://photos.app.goo.gl/g9WfLbWcYNQpEyzNA
 Sin Año|1|YY385 @ Mercedes Altimiras Lampré|https://photos.app.goo.gl/7Zq4PG5GGokhhrKq7
-Sin Año|1|YY386 @ Mercedes Lampré Sin elementos Más opciones|https://photos.google.com/album/AF1QipNPVY53v1jMhPfRkzLHgJx8LuuHPwyDLTwWIRfn
 Sin Año|1|YY387 @ Mi hija a la Universidad|https://photos.app.goo.gl/Wzs8XYkfDXF4B2qs7
 Sin Año|1|YY388 @ MIS HIJAS Y SUS FAMILIAS|https://photos.app.goo.gl/dp3Y4Cjz6CUCZc2B9
 Sin Año|1|YY389 @ muchas|https://photos.google.com/album/AF1QipOHO4EiJ6eNOJmWxBHCiSnLYntrOy9twetd2u48
@@ -401,9 +395,7 @@ Sin Año|1|YY400 @ Peliculas familiares|https://photos.app.goo.gl/KZVM9gNULcLiTV
 Sin Año|1|YY401 @ Pinturas de Mercedes Altimiras Lampré|https://photos.app.goo.gl/zh6fPFtCijNKZSTU7
 Sin Año|1|YY402 @ Plaza Maipu|https://photos.google.com/album/AF1QipOOWPiOp9dIbxdHSZoVkDDST5GZwFSnr1pctSer
 Sin Año|1|YY403 @ Quebrada Escobar|https://photos.app.goo.gl/tkEY9zpCMdC8mtgG9
-Sin Año|2|YY404 @ Raúl Claudio Córdova Tapia Sin elementos Más opciones|https://photos.google.com/album/AF1QipOC1wsvfaAbPv8GnFBDR67UQmBx09SLJbDAAzim
 Sin Año|2|YY405 @ Raúl Córdova L|https://photos.app.goo.gl/8CRiyHQxmN7mhJNb9
-Sin Año|1|YY406 @ Rodrigo Orellana Sin elementos Más opciones|https://photos.google.com/album/AF1QipO-uKNpy4bjChHGaWM42hBNTDQMa67GLIJGLJsT
 Sin Año|1|YY407 @ Sábado 28may2016|https://photos.app.goo.gl/z7YzGtd5zL6XyVUv5
 Sin Año|1|YY408 @ Sábado en Plaza de Armas 16jul2016|https://photos.app.goo.gl/mFFTUUs82KNtcGnN7
 Sin Año|1|YY409 @ SANT FRUITOS DE BAGES - BARCELONA|https://photos.app.goo.gl/FhsptLCtdtnXXf2y8
@@ -411,7 +403,6 @@ Sin Año|1|YY410 @ selecciones mejores|https://photos.app.goo.gl/UPEU2HXFEV8BJKT
 Sin Año|1|YY411 @ sept2013|https://photos.app.goo.gl/8WgG5ivWMkXUhuis9
 Sin Año|1|YY412 @ sin clasificar|https://photos.app.goo.gl/99484d2sysziG2Zz5
 Sin Año|1|YY413 @ SOLE-SOLE|https://photos.app.goo.gl/HVM3Z1ZbobHtz3fVA
-Sin Año|2|YY414 @ Soledad Córdova Tapia Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipPqsBSbtqIpHEDR0GTdtxhp_uw9FIHsbhPpOYmDgpA6eWMb9s8BLQ1Z1Ghkjid6kw
 Sin Año|1|YY415 @ SOLO YO!!|https://photos.app.goo.gl/jrvk8XL8JjkqyjwP8
 Sin Año|1|YY416 @ terminando el dormitorio con piso flot.|https://photos.google.com/album/AF1QipN_NNryDCVKpJ91vjm8x9fj_GDCWhghqXlNPm4k
 Sin Año|1|YY417 @ Total TopImagineSecret|https://photos.app.goo.gl/4e3TMUgYBqDJr3Ci8
@@ -419,7 +410,6 @@ Sin Año|1|YY418 @ Transformando el dormitorio|https://photos.google.com/album/A
 Sin Año|1|YY419 @ ttt|https://photos.app.goo.gl/rw2s48yDMU41B5Eb7
 Sin Año|1|YY420 @ VARIAS SIN CLASIFICAR I|https://photos.app.goo.gl/5r21uAdvwp4jkFuA8
 Sin Año|1|YY421 @ Veronica Altimiras - recuerdos|https://photos.app.goo.gl/qiQh4kkiLLoBbhG48
-Sin Año|1|YY422 @ Verónica Altimiras Lampré Sin elementos Más opciones|https://photos.google.com/album/AF1QipNj6EgUQgIhQLJf8FOlbCGKyFfJtewjOQdI6fV0
 Sin Año|1|YY423 @ Viaje|https://photos.app.goo.gl/HmU9Kzh15NtHFBpv8
 Sin Año|1|YY424 @ Viaje|https://photos.app.goo.gl/8djX52HYspuYBbdg7
 Sin Año|1|YY425 @ Viaje|https://photos.app.goo.gl/aUwQS61WHaatHRUS8
@@ -949,14 +939,12 @@ Sin Año|1|RA440 @ Yoko un sueño hecho realidad|https://photos.google.com/album
 Sin Año|1|RA441 @ YOKO y JOSE|https://photos.google.com/album/AF1QipO6BMeRE-NshP9lgcfkRb2noHUaTKTKNcPuINAmSAkD4Hmzo9KJzIRU-lxkbGyL-w
 Sin Año|1|RA442 @ yoyo|https://photos.app.goo.gl/cL4gqtP42sdi5r4c6
 Sin Año|1|RA443 @ yoyo|https://photos.app.goo.gl/Dc3RSxgJxg8CLMeU9
-1985|1|JA4 @ Terremoto 30 Marzo 1985 Sin elementos Más opciones|https://photos.google.com/album/AF1QipN7y1fo8V2bHhxKzRfIrsLrtmtLK7jxnd9YFkiv
 1989|2|JA5 @ 1989 Copiapó Córdova|https://photos.app.goo.gl/WEiVMoRDWUtQX6YC9
 1990|1|JA6 @ Varios 13 1990|https://photos.app.goo.gl/an17BMMYfq4BVhsj9
 2000|1|JA7 @ Mar 2000 -50 años matrimonio|https://photos.app.goo.gl/EgnRHRFzrN4Rawu77
 2007|1|JA9 @ 7 Dic 2007 Graduación de Natalia|https://photos.app.goo.gl/fjqDrT9VDe1Xrw817
 2008|1|JA10 @ 2008|https://photos.app.goo.gl/She9JduaYpko1hcDA
 2009|1|JA11 @ 2009|https://photos.app.goo.gl/8vpbdLudUJxqsdeN9
-2010|1|JA12 @ Terremoto 27 feb 2010 Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipP13UlmoFbrG-SLaGqToL2kvKBezHr22XIGGb0wmMyzIgatTTCd6Mid52IaHQ4Rjw
 2011|1|JA14 @ Diciembre 2011|https://photos.app.goo.gl/yFqEZ5RZQQiEzX526
 2011|1|JA15 @ Domingo 2 Enero 2011|https://photos.app.goo.gl/nqbmiLe9jGrYQ9L18
 2011|1|JA16 @ José Altimiras Lampré varios 2011|https://photos.app.goo.gl/6cetigFZn7sUsmi52
@@ -1208,7 +1196,6 @@ Sin Año|1|RA443 @ yoyo|https://photos.app.goo.gl/Dc3RSxgJxg8CLMeU9
 2021|1|JA318 @ 2021 enero Agosto|https://photos.app.goo.gl/qH998HVBUHzy5aQZA
 2021|1|JA319 @ 2021 sept diciembre|https://photos.app.goo.gl/aXBQ5HqKYZYYjt7o8
 2021|1|JA320 @ 22 Ene 2021 San Bernardo|https://photos.app.goo.gl/uKAbWRpE13hAsJ5DA
-2021|1|JA321 @ 23 Jul 2021 Llolleo Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipMZs89XDrIqGx251JmtPoFMIYnPeiMhhlbq79GhSboRRj4XHBwcI0bHlbBcpwCKWg
 2021|1|JA322 @ 24 octubre 2021 paseo|https://photos.app.goo.gl/Au2x7UVXBBqWUA5X6
 2021|1|JA323 @ 25 diciembre 2021|https://photos.app.goo.gl/fxSA2jgTJEtia8p48
 2021|1|JA324 @ 25 septiembre 2021 cumpleaños de Mony|https://photos.app.goo.gl/c1sv2StG5F8VXQyu7
@@ -1227,7 +1214,6 @@ Sin Año|1|RA443 @ yoyo|https://photos.app.goo.gl/Dc3RSxgJxg8CLMeU9
 2021|1|JA337 @ 4 feb 2021 Forestal|https://photos.app.goo.gl/YfnR7uEmDxNNA2na7
 2021|1|JA338 @ 5 feb 2021 Pastel|https://photos.app.goo.gl/zgQZwoRwZz9Y9mrUA
 2021|1|JA339 @ 8 Ene 2021 Parque Araucano|https://photos.app.goo.gl/rjcQYfhhKPBDxa7W7
-2021|1|JA340 @ 9 Jul 2021 Cumpleaños de Verónica Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipPiPFd7JUvGKWJErvpOJusfWbK_-xwkzcMwuRy8Zc9uuHpzhlKviglZQbxBas6mNg
 2021|1|JA341 @ A la Dávila 2021|https://photos.app.goo.gl/32jH6TBmA9fLkDaf6
 2021|1|JA342 @ Barrio Italia 2021|https://photos.app.goo.gl/KWUD1W2JdUu3TmT78
 2021|1|JA343 @ Campaña 2021|https://photos.app.goo.gl/v7kz4nbevoMWVGp37
@@ -1236,7 +1222,6 @@ Sin Año|1|RA443 @ yoyo|https://photos.app.goo.gl/Dc3RSxgJxg8CLMeU9
 2021|1|JA346 @ Febrero 2021|https://photos.app.goo.gl/ZQkPb3aEHYQK3u2d9
 2021|1|JA347 @ Fin CAMPAÑA 2021|https://photos.app.goo.gl/1n6AU8ypFzbSErxKA
 2021|1|JA348 @ Incendio Pajaritos 2021|https://photos.app.goo.gl/f3w2cAZC213Sxw5u9
-2021|1|JA349 @ Julio 2021 Sin elementos Más opciones|https://photos.google.com/album/AF1QipOb0JZQ9N6exW7dN0HIlRS5P2gpJUJuxRwVbzfu
 2021|1|JA350 @ Lo Valledor 2021|https://photos.app.goo.gl/1HjrVynWPHur3Tpk9
 2021|1|JA351 @ Marzo 2021|https://photos.app.goo.gl/Aa5rUNJruCgxB9DcA
 2021|1|JA352 @ Navidad 2021|https://photos.app.goo.gl/XfYJh7QQrTUmvAxU6
@@ -1392,7 +1377,6 @@ Sin Año|1|JA506 @ Álbum familiar de los Araya|https://photos.app.goo.gl/8xuFhV
 Sin Año|1|JA508 @ Alemanas en China|https://photos.app.goo.gl/9HJFgeG4AEVveG959
 Sin Año|2|JA509 @ Almuerzo con Iván Córdova|https://photos.app.goo.gl/zSqovYwcwjxEwkGW9
 Sin Año|2|JA511 @ Amandina López (Córdova)|https://photos.app.goo.gl/PUbWFM14c43Pee3d9
-Sin Año|1|JA512 @ Ampliacion casa Möller - Quillota Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipNueLBCykeEoYoBMtmirsiECpIo5yQHWlKux8C2NXr2IxeRxC8xgDWOE2dDgeRUAQ
 Sin Año|1|JA514 @ Andrés Gallardo|https://photos.app.goo.gl/98kZ2TooWkTQvWxE9
 Sin Año|1|JA515 @ Antigua Sole|https://photos.app.goo.gl/uwFC3W5r3xiqjw7T9
 Sin Año|2|JA516 @ Antiguas CORDOVA|https://photos.app.goo.gl/E9buKuQcGAQjrxP67
@@ -1509,7 +1493,6 @@ Sin Año|1|JA665 @ Joaquín Riba Vidal|https://photos.app.goo.gl/cJ7NGjuxjomCHQj
 Sin Año|1|JA666 @ Joaquín Riba Vidal|https://photos.app.goo.gl/vb1EqJsrqvLWozjP9
 Sin Año|1|JA667 @ Johana Antinao|https://photos.app.goo.gl/7vu1u3qApKiMvT2D6
 Sin Año|1|JA668 @ Jose - Jose|https://photos.app.goo.gl/2d7A3kTVeSUZkmEb7
-Sin Año|1|JA671 @ Jose Altimiras Lampre Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipNFzs7dCww5J6_ziFLUBc8EcmsjKdLbYKl5o7aYojxcql4eGFJWTJWtJr6FsrTnNg
 Sin Año|2|JA672 @ José Ignacio Allamand Córdova|https://photos.app.goo.gl/fjh4SSt5EHnnFVX18
 Sin Año|1|JA673 @ José Joaquín Rodríguez Altimiras|https://photos.app.goo.gl/DGe1URxBuGiKTjX58
 Sin Año|1|JA674 @ Josefa Lampré Montes|https://photos.app.goo.gl/7CFByWZ65RaUpzcw5
@@ -1563,10 +1546,8 @@ Sin Año|1|JA727 @ Martes en Quillota-oct2016|https://photos.app.goo.gl/yDPiqq3F
 Sin Año|1|JA729 @ Martes en Santiago de Chile ene2018|https://photos.app.goo.gl/stuKD559GFYocaep9
 Sin Año|1|JA731 @ Martes en Santiago dic2016|https://photos.app.goo.gl/9tYaLEEZSsVM66m69
 Sin Año|1|JA733 @ Martes Las Condes y Vitacura nov2014|https://photos.app.goo.gl/YMM7uxnpGJJaMWDb7
-Sin Año|2|JA734 @ Matrimonio Raul Cordova e Iris Tapia Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipOPEDj3slfBNfTNQS35IoIKgv_uJMAqbgi6JA8x3DnXELh05-xxnRIpNnbLBgC6hA
 Sin Año|1|JA736 @ Mercedes Altimiras Lampré|https://photos.app.goo.gl/RqdLQuVSCKKPNiiA8
 Sin Año|1|JA737 @ Mercedes Altimiras Lampré|https://photos.app.goo.gl/eUNnenrqBD2XZCDz7
-Sin Año|1|JA739 @ Miércoles a la noche Sin elementos · Compartido Más opciones|https://photos.google.com/album/AF1QipNFIcRtPTrvqc3z1Md-wdB2aHFDfzmC_t5pYpLqwMZjoFaTvkfVNguXHh6CHEYNQA
 Sin Año|1|JA740 @ Miércoles a la tarde en Museo Parque de las Esculturas|https://photos.app.goo.gl/ce8matFkApMM9Cwu6
 Sin Año|1|JA741 @ Miércoles a la tarde en Providencia15nov2017|https://photos.app.goo.gl/P2g9y4LatESdZEPH9
 Sin Año|1|JA742 @ Miércoles a la tarde en Santiago - abr2017|https://photos.app.goo.gl/2hxEQw3CWxGNYmRv5
@@ -1588,7 +1569,6 @@ Sin Año|1|JA759 @ Nicole Rodríguez Altimiras|https://photos.app.goo.gl/DkgJiA5
 Sin Año|2|JA760 @ Olga Sandoval (Córdova)|https://photos.app.goo.gl/6isjDza8YdqQoiiJ9
 Sin Año|1|JA761 @ Omar Altimiras Bahamondes|https://photos.app.goo.gl/DSz5KkordcCQzNr29
 Sin Año|1|JA762 @ Orellana ´s Arenas y mas nov2015|https://photos.app.goo.gl/YohuYsqtkDYZYZsa8
-Sin Año|1|JA763 @ Otras Sin elementos Más opciones|https://photos.google.com/album/AF1QipPGxfc-vevUVruASCV_LxysaXqpXEbqxJl_3v7R
 Sin Año|1|JA764 @ Pablo Loira Altimiras|https://photos.app.goo.gl/szigVJ4CWQYnTmSv6
 Sin Año|1|JA765 @ Pablo Orellana Altimiras|https://photos.app.goo.gl/1Jyi3ConwKjBJ2jB8
 Sin Año|1|JA766 @ Palacio Cousiño2019|https://photos.app.goo.gl/D93WFzgB1U1DBUDh6
@@ -1972,7 +1952,6 @@ Sin Año|2|IS310 @ Raúl Córdova López|https://photos.app.goo.gl/QgmufkdnzWQoQ
 Sin Año|2|IS311 @ Reunión Hnos y cumpleaños Mario Felipe Córdova|https://photos.app.goo.gl/JwTnLACwjaitpnyX6
 Sin Año|1|IS312 @ Sábado a la noche en Santiago|https://photos.app.goo.gl/wUmgvpktrvjb2AEW8
 Sin Año|1|IS313 @ San Cristóbal|https://photos.google.com/album/AF1QipOHRBd-9CB5nNntbwTIHxgWbWMgm-WQnqpuMCkau2ITJikmoK62vJGiNVLy-QQ0rQ
-Sin Año|1|IS314 @ Sin nombre Sin elementos Más opciones|https://photos.google.com/album/AF1QipNhm9RuOXr0MTHFV3fYDEyA5u9FlOYVUshj9xI9
 Sin Año|2|IS315 @ Soledad, Iván y Mario Córdova|https://photos.app.goo.gl/VuqdX8Jr7aKNby6M6
 Sin Año|1|IS316 @ talagante tios Lampre|https://photos.app.goo.gl/FX6cMWdLi6M7wnFy8
 Sin Año|1|IS317 @ Tios Lampré|https://photos.app.goo.gl/LwzYFLxu2E6YuEgB8
